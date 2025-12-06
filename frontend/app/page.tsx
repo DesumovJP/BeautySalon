@@ -10,10 +10,11 @@ import { AnimatedCategoryCard } from "@/components/animated-category-card";
 import { AnimatedContactCard } from "@/components/animated-contact-card";
 import { GallerySection } from "@/components/gallery-section";
 import { fetchCategories, fetchGalleryBySlug } from "@/lib/strapi";
+import type { Category, Gallery } from "@/lib/strapi";
 
 export default async function Home() {
-  let categories = [];
-  let gallery = null;
+  let categories: Category[] = [];
+  let gallery: Gallery | null = null;
   
   try {
     categories = await fetchCategories();
