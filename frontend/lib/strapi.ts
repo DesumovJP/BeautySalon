@@ -268,6 +268,11 @@ export async function fetchCategoryBySlug(slug: string): Promise<Category | null
 
 export async function fetchServicesByCategory(categorySlug: string): Promise<Service[]> {
   try {
+    const slugFallbackMap: Record<string, string> = {
+      manicure: 'manikyur',
+      hair: 'strijka',
+    };
+
     // First, get the category to get its ID
     const category = await fetchCategoryBySlug(categorySlug);
     if (!category) {
@@ -276,32 +281,33 @@ export async function fetchServicesByCategory(categorySlug: string): Promise<Ser
     }
 
     // Try fetching by category slug first
-    let url = `${STRAPI_URL}/api/services?filters[category][slug][$eq]=${categorySlug}&populate=*&sort=isPopular:desc,name:asc`;
-    console.log('Fetching services by category slug:', categorySlug, 'URL:', url);
-    
-    let response = await fetch(url, { next: { revalidate: 3600 } });
-    let data = null;
-    
-    if (response.ok) {
-      data = await response.json();
-      const services = Array.isArray(data.data) ? data.data : [];
-      if (services.length > 0) {
-        console.log('Services found by slug:', services.length);
-        return services.filter((service: any) => service && service.id && service.name);
+    const slugsToTry = [categorySlug, slugFallbackMap[categorySlug]].filter(Boolean) as string[];
+    for (const slug of slugsToTry) {
+      const url = `${STRAPI_URL}/api/services?filters[category][slug][$eq]=${slug}&populate=*&sort=isPopular:desc,name:asc`;
+      console.log('Fetching services by category slug:', slug, 'URL:', url);
+      
+      const response = await fetch(url, { next: { revalidate: 3600 } });
+      if (response.ok) {
+        const data = await response.json();
+        const services = Array.isArray(data.data) ? data.data : [];
+        if (services.length > 0) {
+          console.log('Services found by slug:', services.length);
+          return services.filter((service: any) => service && service.id && service.name);
+        }
       }
     }
     
     // If that doesn't work, try by category ID
-    url = `${STRAPI_URL}/api/services?filters[category][id][$eq]=${category.id}&populate=*&sort=isPopular:desc,name:asc`;
+    const url = `${STRAPI_URL}/api/services?filters[category][id][$eq]=${category.id}&populate=*&sort=isPopular:desc,name:asc`;
     console.log('Trying to fetch services by category ID:', category.id, 'URL:', url);
-    response = await fetch(url, { next: { revalidate: 3600 } });
+    const response = await fetch(url, { next: { revalidate: 3600 } });
     
     if (!response.ok) {
       console.error('Failed to fetch services:', response.status, response.statusText);
       return [];
     }
     
-    data = await response.json();
+    const data = await response.json();
     console.log('Services response data:', { 
       count: data.data?.length || 0,
       services: data.data?.map((s: any) => ({ id: s.id, name: s.name })) || []

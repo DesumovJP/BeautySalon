@@ -47,11 +47,21 @@ export default async function CategoryPage({
     notFound();
   }
 
-  // Use only the category image; no fallbacks to avoid mismatched visuals.
+  // Use category image; if missing, try gallery first image, then fallback
   const normalizedCategoryImage = Array.isArray((category as any)?.image)
     ? (category as any).image[0]
     : category.image;
-  const categoryImageUrl = getImageUrl(normalizedCategoryImage) || HERO_FALLBACKS[slug] || DEFAULT_HERO_FALLBACK;
+  const relatedGallery =
+    (category as any)?.gallery && Array.isArray((category as any).gallery)
+      ? (category as any).gallery[0]
+      : (category as any)?.gallery;
+  const galleryImages = (gallery || relatedGallery)?.images || [];
+  const galleryFirstImage = Array.isArray(galleryImages) ? galleryImages[0] : null;
+  const categoryImageUrl =
+    getImageUrl(normalizedCategoryImage) ||
+    getImageUrl(galleryFirstImage) ||
+    HERO_FALLBACKS[slug] ||
+    DEFAULT_HERO_FALLBACK;
 
   // Build hashtag badges from top services (exclude duplicates with category name or generic hair tag)
   const tagBadges = [
