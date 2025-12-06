@@ -19,7 +19,8 @@ export function AnimatedCategoryCard({
     return null;
   }
 
-  const imageUrl = getImageUrl(category.image);
+  const fallback = "https://fra1.digitaloceanspaces.com/mymediastorage/Beauty%20Salon/2149975508_ea1c3b32d5.jpg";
+  const imageUrl = getImageUrl(category.image) || fallback;
   const Icon =
     category.slug === "manikyur" || category.slug === "manikyur"
       ? Sparkles

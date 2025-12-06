@@ -18,6 +18,21 @@ export function GallerySection({ gallery }: GallerySectionProps) {
     setIsModalOpen(true);
   };
 
+  const fallbackImages = [
+    "https://fra1.digitaloceanspaces.com/mymediastorage/Beauty%20Salon/2149975508_ea1c3b32d5.jpg",
+    "https://fra1.digitaloceanspaces.com/mymediastorage/Beauty%20Salon/945d2234331c51cc79d98d5f2024a0e5_6798ed3549.jpg",
+    "https://fra1.digitaloceanspaces.com/mymediastorage/Beauty%20Salon/0385ea2076e9903414e56142cf253258_a5ac482775.jpg",
+    "https://fra1.digitaloceanspaces.com/mymediastorage/Beauty%20Salon/mejkap_ta_stajling_8ac8c39003.jpg",
+  ];
+
+  const galleryImages = gallery?.images && gallery.images.length > 0
+    ? gallery.images
+    : fallbackImages.map((url, idx) => ({
+        id: idx,
+        url,
+        alternativeText: 'Галерея',
+      } as any));
+
   return (
     <>
       <section id="gallery" className="section-padding px-4 bg-white">
@@ -30,44 +45,31 @@ export function GallerySection({ gallery }: GallerySectionProps) {
               Перегляньте результати нашої роботи та атмосферу преміального салону краси в Києві
             </p>
           </div>
-          {gallery && gallery.images && gallery.images.length > 0 ? (
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-              {gallery.images.map((image, index) => {
-                const imageUrl = getImageUrl(image);
-                if (!imageUrl) return null;
-                
-                return (
-                  <div
-                    key={image.id || index}
-                    className="relative aspect-square bg-beige-200 rounded-lg overflow-hidden group cursor-pointer"
-                    onClick={() => handleImageClick(index)}
-                  >
-                    <Image
-                      src={imageUrl}
-                      alt={image.alternativeText || image.caption || 'Галерея'}
-                      fill
-                      className="object-cover image-zoom"
-                    />
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300"></div>
-                  </div>
-                );
-              })}
-            </div>
-          ) : (
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            {galleryImages.map((image, index) => {
+              const imageUrl = getImageUrl(image);
+              if (!imageUrl) return null;
+              
+              return (
                 <div
-                  key={item}
-                  className="aspect-square bg-beige-200 rounded-lg flex items-center justify-center text-black/30"
+                  key={image.id || index}
+                  className="relative aspect-square bg-beige-200 rounded-lg overflow-hidden group cursor-pointer"
+                  onClick={() => handleImageClick(index)}
                 >
-                  <span className="text-sm">Фото {item}</span>
+                  <Image
+                    src={imageUrl}
+                    alt={image.alternativeText || (image as any).caption || 'Галерея'}
+                    fill
+                    className="object-cover image-zoom"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300"></div>
                 </div>
-              ))}
-            </div>
-          )}
+              );
+            })}
+          </div>
         </div>
       </section>
-      {selectedImageIndex !== null && gallery && gallery.images && (
+      {selectedImageIndex !== null && gallery && gallery.images && gallery.images.length > 0 && (
         <GalleryModal
           images={gallery.images}
           initialIndex={selectedImageIndex}
@@ -78,5 +80,7 @@ export function GallerySection({ gallery }: GallerySectionProps) {
     </>
   );
 }
+
+
 
 
