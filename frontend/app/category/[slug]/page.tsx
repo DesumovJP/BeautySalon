@@ -187,44 +187,44 @@ export default async function CategoryPage({
 
         {/* Encouragement Cards Section */}
         <div className="mb-16 md:mb-20">
-          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-            <div className="flex items-start gap-4 p-5 bg-white rounded-lg border border-beige-200 hover:border-black/30 hover:shadow-lg transition-all duration-300 group card-hover-lift">
-              <div className="w-14 h-14 bg-black rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                <Award className="w-7 h-7 text-white" />
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
+            <div className="flex items-start gap-3 p-4 sm:p-5 bg-white rounded-lg border border-beige-200 hover:border-black/30 hover:shadow-lg transition-all duration-300 group card-hover-lift">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 bg-black rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <Award className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
               </div>
               <div>
-                <h3 className="font-semibold text-black mb-1.5 text-base">Преміальна якість</h3>
-                <p className="text-sm text-black/60 leading-relaxed">Тільки найкращі матеріали</p>
+                <h3 className="font-semibold text-black mb-1 text-sm sm:text-base leading-tight">Преміальна якість</h3>
+                <p className="text-xs sm:text-sm text-black/60 leading-relaxed">Тільки найкращі матеріали</p>
               </div>
             </div>
 
-            <div className="flex items-start gap-4 p-5 bg-white rounded-lg border border-beige-200 hover:border-black/30 hover:shadow-lg transition-all duration-300 group card-hover-lift">
-              <div className="w-14 h-14 bg-black rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                <Users className="w-7 h-7 text-white" />
+            <div className="flex items-start gap-3 p-4 sm:p-5 bg-white rounded-lg border border-beige-200 hover:border-black/30 hover:shadow-lg transition-all duration-300 group card-hover-lift">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 bg-black rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <Users className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
               </div>
               <div>
-                <h3 className="font-semibold text-black mb-1.5 text-base">Досвідчені майстри</h3>
-                <p className="text-sm text-black/60 leading-relaxed">Професійний підхід</p>
+                <h3 className="font-semibold text-black mb-1 text-sm sm:text-base leading-tight">Досвідчені майстри</h3>
+                <p className="text-xs sm:text-sm text-black/60 leading-relaxed">Професійний підхід</p>
               </div>
             </div>
 
-            <div className="flex items-start gap-4 p-5 bg-white rounded-lg border border-beige-200 hover:border-black/30 hover:shadow-lg transition-all duration-300 group card-hover-lift">
-              <div className="w-14 h-14 bg-black rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                <Star className="w-7 h-7 text-white fill-white" />
+            <div className="flex items-start gap-3 p-4 sm:p-5 bg-white rounded-lg border border-beige-200 hover:border-black/30 hover:shadow-lg transition-all duration-300 group card-hover-lift">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 bg-black rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <Star className="w-6 h-6 sm:w-7 sm:h-7 text-white fill-white" />
               </div>
               <div>
-                <h3 className="font-semibold text-black mb-1.5 text-base">Відмінний результат</h3>
-                <p className="text-sm text-black/60 leading-relaxed">Гарантія задоволення</p>
+                <h3 className="font-semibold text-black mb-1 text-sm sm:text-base leading-tight">Відмінний результат</h3>
+                <p className="text-xs sm:text-sm text-black/60 leading-relaxed">Гарантія задоволення</p>
               </div>
             </div>
 
-            <div className="flex items-start gap-4 p-5 bg-white rounded-lg border border-beige-200 hover:border-black/30 hover:shadow-lg transition-all duration-300 group card-hover-lift">
-              <div className="w-14 h-14 bg-black rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                <Sparkles className="w-7 h-7 text-white" />
+            <div className="flex items-start gap-3 p-4 sm:p-5 bg-white rounded-lg border border-beige-200 hover:border-black/30 hover:shadow-lg transition-all duration-300 group card-hover-lift">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 bg-black rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <Sparkles className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
               </div>
               <div>
-                <h3 className="font-semibold text-black mb-1.5 text-base">Індивідуальний підхід</h3>
-                <p className="text-sm text-black/60 leading-relaxed">Персональний догляд</p>
+                <h3 className="font-semibold text-black mb-1 text-sm sm:text-base leading-tight">Індивідуальний підхід</h3>
+                <p className="text-xs sm:text-sm text-black/60 leading-relaxed">Персональний догляд</p>
               </div>
             </div>
           </div>
