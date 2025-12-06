@@ -26,7 +26,7 @@ export default async function Home() {
   }
   
   try {
-    gallery = await fetchGalleryBySlug('galleryHome');
+    gallery = await fetchGalleryBySlug('gallery_main');
   } catch (error) {
     console.error('Error fetching gallery:', error);
   }

@@ -115,7 +115,7 @@ const articles = [
   {
     title: "Ідеальні брови та вії",
     description: "Як ламінування й фарбування брів та вій допомагають мати виразний погляд щодня",
-    image: `${STRAPI_URL}/uploads/6f21cf3e46f9c983d66df2dc9890d9be_1e4a4b7ba0.jpg`,
+    image: "https://fra1.digitaloceanspaces.com/mymediastorage/Beauty%20Salon/4e7fb22c532216947971889b3ea60c29_f1086758dd.jpg",
     date: "20 грудня 2023",
     tag: "Брови та вії",
     content: `Виразний погляд — це про форму, колір і догляд. Ламінування вій додає природного вигину, а фарбування брів підкреслює риси обличчя.
@@ -130,7 +130,7 @@ const articles = [
   {
     title: "Масаж та релакс",
     description: "Гід по SPA-програмам і масажам, які реально знімають напругу",
-    image: `${STRAPI_URL}/uploads/6b5fd30c11decb7d4e1a25d2ae23b1f3_cf7b7f93d4.jpg`,
+    image: "https://fra1.digitaloceanspaces.com/mymediastorage/Beauty%20Salon/3af18199b3322bdce55a1b33b1336948_e909bd9310.jpg",
     date: "10 грудня 2023",
     tag: "SPA та релакс",
     content: `Стрес накопичується в тілі — і це відчувається на шкірі та самопочутті. Ми розбираємо, які SPA-програми справді допомагають відновитись.
@@ -145,7 +145,7 @@ const articles = [
   {
     title: "Makeup & Styling",
     description: "Як підготуватися до події: макіяж, укладання та добір стійких продуктів",
-    image: `${STRAPI_URL}/uploads/1a2e9c522373b1c4eaf06b3bd2b5c962_9d2f1dcd5d.jpg`,
+    image: "https://fra1.digitaloceanspaces.com/mymediastorage/Beauty%20Salon/mejkap_ta_stajling_8ac8c39003.jpg",
     date: "1 грудня 2023",
     tag: "Макіяж",
     content: `Подія наближається — час продумати образ. Стійкий макіяж і правильна укладка тримаються весь день, якщо знати нюанси.
