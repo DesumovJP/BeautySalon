@@ -13,6 +13,11 @@ export default async function CategoryPage({
 }: {
   params: Promise<{ slug: string }> | { slug: string };
 }) {
+  const HERO_FALLBACKS: Record<string, string> = {
+    manikyur: "https://fra1.digitaloceanspaces.com/mymediastorage/Beauty%20Salon/0385ea2076e9903414e56142cf253258_a5ac482775.jpg",
+    strijka: "https://fra1.digitaloceanspaces.com/mymediastorage/Beauty%20Salon/2149975508_ea1c3b32d5.jpg",
+  };
+  const DEFAULT_HERO_FALLBACK = "https://fra1.digitaloceanspaces.com/mymediastorage/Beauty%20Salon/945d2234331c51cc79d98d5f2024a0e5_6798ed3549.jpg";
   // Handle both Promise and direct params (Next.js 15+ vs 14)
   const resolvedParams = await Promise.resolve(params);
   const slug = resolvedParams.slug;
@@ -42,7 +47,10 @@ export default async function CategoryPage({
     notFound();
   }
 
-  const categoryImageUrl = getImageUrl(category.image);
+  const categoryImageUrl =
+    getImageUrl(category.image) ||
+    HERO_FALLBACKS[slug] ||
+    DEFAULT_HERO_FALLBACK;
 
   // Build hashtag badges from top services (exclude duplicates with category name or generic hair tag)
   const tagBadges = [
