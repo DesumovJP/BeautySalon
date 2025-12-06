@@ -1,0 +1,38 @@
+# Node & build artifacts
+node_modules/
+.next/
+.turbo/
+dist/
+.cache/
+.tmp/
+
+# Strapi build/runtime
+backend/dist/
+backend/.tmp/
+backend/.strapi/
+backend/.cache/
+
+# Env / secrets
+.env
+.env.local
+.env.production
+.env.development
+backend/.env
+frontend/.env
+frontend/.env.local
+
+# Logs
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor/OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Vercel/Deploy
+.vercel/
+

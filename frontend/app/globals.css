@@ -1,0 +1,668 @@
+@import "tailwindcss";
+
+:root {
+  --background: #faf9f6;
+  --foreground: #000000;
+  --ring: #000000;
+  --hero-bg-image: url(http://localhost:1337/uploads/2148108775_7ed8604455.jpg);
+  --hero-bg-image-mobile: url(http://localhost:1337/uploads/2148108775_08008d425c.jpg);
+}
+
+@theme {
+  --color-background: #faf9f6;
+  --color-foreground: #000000;
+  --color-beige-50: #faf9f6;
+  --color-beige-100: #f5f3ef;
+  --color-beige-200: #ebe8e0;
+  --color-beige-300: #e0dcd1;
+  --color-beige-400: #d4cfc2;
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Display font for headings */
+h1, h2, h3, h4, h5, h6,
+.text-hero-title,
+.text-section-title,
+.text-card-title {
+  font-family: var(--font-display), serif;
+  font-weight: 700;
+}
+
+/* Typography Scale */
+.text-hero-title {
+  font-size: clamp(2.5rem, 5vw + 1rem, 4.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+/* Beauty word styling with italic/skew */
+.beauty-word {
+  display: inline-block;
+  font-style: italic;
+  transform: skew(-8deg);
+  transform-origin: center;
+  margin-right: 0.1em;
+}
+
+/* Letter spacing utility */
+.letter-spacing-wider {
+  letter-spacing: 0.15em;
+}
+
+.text-section-title {
+  font-size: clamp(1.875rem, 3vw + 0.5rem, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.text-card-title {
+  font-size: clamp(1.25rem, 2vw + 0.25rem, 1.5rem);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.text-body-large {
+  font-size: clamp(1rem, 1.5vw + 0.25rem, 1.25rem);
+  line-height: 1.6;
+}
+
+.text-body {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.text-caption {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: rgb(0 0 0 / 0.7);
+}
+
+/* Section Utilities */
+.section-padding {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+.section-gap {
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .section-gap {
+    gap: 2rem;
+  }
+}
+
+/* Hero Background */
+.hero-background {
+  background-image: var(--hero-bg-image-mobile);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media (min-width: 768px) {
+  .hero-background {
+    background-image: var(--hero-bg-image);
+  }
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar - Premium Style */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-beige-100);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, var(--color-beige-300), var(--color-beige-400));
+  border-radius: 10px;
+  border: 2px solid var(--color-beige-100);
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, var(--color-beige-400), #c9c3b5);
+}
+
+/* Firefox Scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-beige-300) var(--color-beige-100);
+}
+
+/* Focus Styles */
+*:focus-visible {
+  outline: 2px solid black;
+  outline-offset: 2px;
+}
+
+/* Accordion Animations */
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+.animate-accordion-down {
+  animation: accordion-down 0.2s ease-out;
+}
+
+.animate-accordion-up {
+  animation: accordion-up 0.2s ease-out;
+}
+
+/* Premium Animations - GPU Accelerated */
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Slide Up Animation */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide In From Left */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide In From Right */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Scale In Animation */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Hero Badge Pulse */
+@keyframes pulseSubtle {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Animation Classes */
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+/* Scroll Animation States */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger Animation for Cards */
+.scroll-animate-stagger {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-animate-stagger.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero Entrance Animations */
+.hero-badge-animate {
+  animation: fadeIn 1s ease-out 0.3s forwards,
+             slideUp 1s ease-out 0.3s forwards;
+  opacity: 0;
+}
+
+.hero-title-animate {
+  animation: fadeIn 1.2s ease-out 0.5s forwards,
+             slideUp 1.2s ease-out 0.5s forwards;
+  opacity: 0;
+}
+
+.hero-text-animate {
+  animation: fadeIn 1s ease-out 0.7s forwards,
+             slideUp 1s ease-out 0.7s forwards;
+  opacity: 0;
+}
+
+.hero-stats-animate {
+  animation: fadeIn 1s ease-out 0.9s forwards,
+             slideUp 1s ease-out 0.9s forwards;
+  opacity: 0;
+}
+
+.hero-buttons-animate {
+  animation: fadeIn 1s ease-out 1.1s forwards,
+             slideUp 1s ease-out 1.1s forwards;
+  opacity: 0;
+}
+
+/* Respect Reduced Motion Preference */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in,
+  .animate-slide-up,
+  .animate-slide-in-left,
+  .animate-slide-in-right,
+  .animate-scale-in,
+  .scroll-animate,
+  .scroll-animate-stagger,
+  .hero-badge-animate,
+  .hero-title-animate,
+  .hero-text-animate,
+  .hero-stats-animate,
+  .hero-buttons-animate {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Smooth Hover Transitions */
+.premium-hover {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.premium-hover:hover {
+  transform: translateY(-4px);
+}
+
+/* Card Hover Enhancement */
+.card-hover-lift {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.card-hover-lift:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Premium Micro-animations */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Elegant Button Animations */
+.btn-premium {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-premium::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-premium:hover::before {
+  left: 100%;
+}
+
+.btn-premium:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.btn-premium:active {
+  transform: translateY(0);
+}
+
+/* Icon Hover Animations */
+.icon-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.icon-hover:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Link Underline Animation */
+.link-elegant {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.link-elegant::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.link-elegant:hover::after {
+  width: 100%;
+}
+
+/* Badge Pulse Animation */
+.badge-pulse {
+  animation: pulseSubtle 2s ease-in-out infinite;
+}
+
+/* Image Zoom on Hover */
+.image-zoom {
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.image-zoom:hover {
+  transform: scale(1.05);
+}
+
+/* Smooth Fade In for Sections */
+.section-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+/* Stagger Children Animation */
+.stagger-children > * {
+  opacity: 0;
+  animation: slideInFromBottom 0.6s ease-out forwards;
+}
+
+.stagger-children > *:nth-child(1) { animation-delay: 0.1s; }
+.stagger-children > *:nth-child(2) { animation-delay: 0.2s; }
+.stagger-children > *:nth-child(3) { animation-delay: 0.3s; }
+.stagger-children > *:nth-child(4) { animation-delay: 0.4s; }
+.stagger-children > *:nth-child(5) { animation-delay: 0.5s; }
+.stagger-children > *:nth-child(6) { animation-delay: 0.6s; }
+
+/* Header Scroll Animation */
+.header-scroll {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Mobile Menu Animation */
+.mobile-menu-enter {
+  animation: slideInFromBottom 0.3s ease-out;
+}
+
+/* Number Counter Animation */
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.number-animate {
+  animation: countUp 0.6s ease-out forwards;
+}
+
+/* Elegant Card Hover Effect - Subtle and Premium */
+.card-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-shine::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.06) 35%,
+    transparent 70%
+  );
+  transform: skewX(-12deg);
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+              left 0s linear;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.card-shine:hover::before {
+  left: 150%;
+  transform: translateX(200%) skewX(-12deg);
+}
+
+/* Rich Text Content Styling */
+.rich-text-content {
+  line-height: 1.75;
+}
+
+.rich-text-content p {
+  margin-bottom: 1rem;
+  line-height: 1.75;
+}
+
+.rich-text-content p:last-child {
+  margin-bottom: 0;
+}
+
+.rich-text-content strong,
+.rich-text-content b {
+  font-weight: 600;
+  color: var(--color-foreground);
+}
+
+.rich-text-content em,
+.rich-text-content i {
+  font-style: italic;
+}
+
+.rich-text-content ul,
+.rich-text-content ol {
+  margin: 1.25rem 0;
+  padding-left: 1.75rem;
+  line-height: 1.8;
+}
+
+.rich-text-content ul {
+  list-style-type: disc;
+}
+
+.rich-text-content ol {
+  list-style-type: decimal;
+}
+
+.rich-text-content li {
+  margin-bottom: 0.5rem;
+}
+
+.rich-text-content h2,
+.rich-text-content h3,
+.rich-text-content h4 {
+  font-family: var(--font-display), serif;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+  color: var(--color-foreground);
+}
+
+.rich-text-content h2 {
+  font-size: 1.75rem;
+}
+
+.rich-text-content h3 {
+  font-size: 1.5rem;
+}
+
+.rich-text-content h4 {
+  font-size: 1.25rem;
+}
+
+.rich-text-content a {
+  color: var(--color-foreground);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: opacity 0.2s;
+}
+
+.rich-text-content a:hover {
+  opacity: 0.7;
+}
+
+.rich-text-content blockquote {
+  border-left: 3px solid var(--color-beige-300);
+  padding-left: 1.5rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: var(--color-foreground);
+  opacity: 0.8;
+}
