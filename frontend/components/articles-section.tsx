@@ -81,7 +81,7 @@ const articles = [
   {
     title: "Ритуал краси та здоров'я",
     description: "Комплексний підхід до догляду за собою",
-    image: "https://fra1.digitaloceanspaces.com/mymediastorage/Beauty%20Salon/Golovna_Hiro_Sekcziya_8f8033ecde.jpg",
+    image: "https://fra1.digitaloceanspaces.com/mymediastorage/Beauty%20Salon/945d2234331c51cc79d98d5f2024a0e5_6798ed3549.jpg",
     date: "5 січня 2024",
     tag: "Краса та здоров'я",
     content: `Краса та здоров'я - це два невіддільні поняття. Правильний догляд за собою - це не просто косметичні процедури, а цілісний підхід до життя.
