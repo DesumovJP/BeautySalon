@@ -17,7 +17,10 @@ export default ({ env }) => ({
             ACL: 'public-read',
           },
         },
-        baseUrl: env('DO_SPACE_CDN_URL') || `${env('DO_SPACE_ENDPOINT')}/${env('DO_SPACE_BUCKET')}`,
+        baseUrl:
+          env('DO_SPACE_BASE_URL') ||
+          env('DO_SPACE_CDN_URL') ||
+          `${env('DO_SPACE_ENDPOINT')}/${env('DO_SPACE_BUCKET')}`,
         rootPath: env('DO_SPACE_ROOT_PATH', ''),
       },
       actionOptions: {
