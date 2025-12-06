@@ -87,6 +87,10 @@ export interface Gallery {
 export function getImageUrl(image: StrapiImage | undefined | null): string | null {
   try {
     if (!image || !image.url) return null;
+    // If Strapi (or the upload provider) already returns an absolute URL, use it as-is.
+    if (image.url.startsWith('http://') || image.url.startsWith('https://')) {
+      return image.url;
+    }
     return `${STRAPI_URL}${image.url}`;
   } catch (error) {
     console.error('Error getting image URL:', error);
