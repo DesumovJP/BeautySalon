@@ -47,10 +47,8 @@ export default async function CategoryPage({
     notFound();
   }
 
-  const categoryImageUrl =
-    getImageUrl(category.image) ||
-    HERO_FALLBACKS[slug] ||
-    DEFAULT_HERO_FALLBACK;
+  // Use only the category image; no fallbacks to avoid mismatched visuals.
+  const categoryImageUrl = getImageUrl(category.image);
 
   // Build hashtag badges from top services (exclude duplicates with category name or generic hair tag)
   const tagBadges = [
@@ -189,7 +187,7 @@ export default async function CategoryPage({
 
         {/* Encouragement Cards Section */}
         <div className="mb-16 md:mb-20">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             <div className="flex items-start gap-4 p-5 bg-white rounded-lg border border-beige-200 hover:border-black/30 hover:shadow-lg transition-all duration-300 group card-hover-lift">
               <div className="w-14 h-14 bg-black rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                 <Award className="w-7 h-7 text-white" />
