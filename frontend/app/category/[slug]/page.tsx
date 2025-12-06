@@ -48,7 +48,10 @@ export default async function CategoryPage({
   }
 
   // Use only the category image; no fallbacks to avoid mismatched visuals.
-  const categoryImageUrl = getImageUrl(category.image);
+  const normalizedCategoryImage = Array.isArray((category as any)?.image)
+    ? (category as any).image[0]
+    : category.image;
+  const categoryImageUrl = getImageUrl(normalizedCategoryImage) || HERO_FALLBACKS[slug] || DEFAULT_HERO_FALLBACK;
 
   // Build hashtag badges from top services (exclude duplicates with category name or generic hair tag)
   const tagBadges = [
@@ -65,7 +68,7 @@ export default async function CategoryPage({
     );
 
   // Map category slug to gallery slug
-  // Prefer related gallery from category, then slug map fallback
+  // Prefer related gallery from category (handles single or array relation), then slug map fallback
   const getGallerySlug = (categorySlug: string): string | null => {
     const galleryMap: Record<string, string> = {
       manikyur: 'gallery_manicure',
@@ -74,8 +77,13 @@ export default async function CategoryPage({
     return galleryMap[categorySlug] || null;
   };
 
+  const relatedGallery =
+    (category as any)?.gallery && Array.isArray((category as any).gallery)
+      ? (category as any).gallery[0]
+      : (category as any)?.gallery;
+
   const relatedGallerySlug =
-    (category as any)?.gallery?.slug ||
+    relatedGallery?.slug ||
     (category as any)?.gallerySlug ||
     (category as any)?.gallery_slug ||
     getGallerySlug(slug);
