@@ -19,7 +19,7 @@ const articles = [
   {
     title: "Секрети здорового волосся",
     description: "Як досягти блиску та сили природним шляхом",
-    image: `${STRAPI_URL}/uploads/2149167396_e252be8c1e.jpg`,
+    image: "https://fra1.digitaloceanspaces.com/mymediastorage/Beauty%20Salon/Sekreti_zdorovogo_volossya_04b515260e.jpg",
     date: "15 січня 2024",
     tag: "Догляд за волоссям",
     content: `Здорове волосся - це не тільки красивий вигляд, але й показник загального стану організму. Ось ключові секрети, які допоможуть вам досягти ідеального стану волосся.
@@ -49,7 +49,7 @@ const articles = [
   {
     title: "Мистецтво манікюру",
     description: "Від класики до сучасних трендів",
-    image: `${STRAPI_URL}/uploads/2148766575_85bc584818.jpg`,
+    image: "https://fra1.digitaloceanspaces.com/mymediastorage/Beauty%20Salon/0385ea2076e9903414e56142cf253258_a5ac482775.jpg",
     date: "10 січня 2024",
     tag: "Манікюр",
     content: `Манікюр - це не просто покриття нігтів, це справжнє мистецтво, яке дозволяє виразити вашу індивідуальність та стиль.
@@ -81,7 +81,7 @@ const articles = [
   {
     title: "Ритуал краси та здоров'я",
     description: "Комплексний підхід до догляду за собою",
-    image: `${STRAPI_URL}/uploads/2148108775_7ed8604455.jpg`,
+    image: "https://fra1.digitaloceanspaces.com/mymediastorage/Beauty%20Salon/Golovna_Hiro_Sekcziya_8f8033ecde.jpg",
     date: "5 січня 2024",
     tag: "Краса та здоров'я",
     content: `Краса та здоров'я - це два невіддільні поняття. Правильний догляд за собою - це не просто косметичні процедури, а цілісний підхід до життя.
