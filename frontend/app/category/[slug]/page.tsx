@@ -37,6 +37,11 @@ export default async function CategoryPage({
   console.log('Category page - services count:', services.length);
   console.log('Category page - services:', services.map(s => ({ id: s.id, name: s.name })));
   
+  if (!category) {
+    console.log('Category not found for slug:', slug);
+    notFound();
+  }
+
   const categoryImageUrl = getImageUrl(category.image);
 
   // Build hashtag badges from top services (exclude duplicates with category name or generic hair tag)
@@ -64,11 +69,6 @@ export default async function CategoryPage({
   
   const gallerySlug = getGallerySlug(slug);
   const gallery = gallerySlug ? await fetchGalleryBySlug(gallerySlug) : null;
-
-  if (!category) {
-    console.log('Category not found for slug:', slug);
-    notFound();
-  }
 
   return (
     <div className="min-h-screen bg-beige-50 py-12 px-4">
