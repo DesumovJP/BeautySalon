@@ -47,14 +47,32 @@ export default async function CategoryPage({
     notFound();
   }
 
-  // Use category image; if missing, try gallery first image, then fallback
-  const normalizedCategoryImage = Array.isArray((category as any)?.image)
-    ? (category as any).image[0]
-    : category.image;
+  // --- Gallery resolution (prefer related gallery on category, then slug map) ---
+  const getGallerySlug = (categorySlug: string): string | null => {
+    const galleryMap: Record<string, string> = {
+      manicure: 'gallery_manicure',
+      hair: 'gallery_hair',
+    };
+    return galleryMap[categorySlug] || null;
+  };
+
   const relatedGallery =
     (category as any)?.gallery && Array.isArray((category as any).gallery)
       ? (category as any).gallery[0]
       : (category as any)?.gallery;
+
+  const relatedGallerySlug =
+    relatedGallery?.slug ||
+    (category as any)?.gallerySlug ||
+    (category as any)?.gallery_slug ||
+    getGallerySlug(slug);
+
+  const gallery = relatedGallerySlug ? await fetchGalleryBySlug(relatedGallerySlug) : null;
+
+  // Use category image; if missing, try gallery first image, then fallback
+  const normalizedCategoryImage = Array.isArray((category as any)?.image)
+    ? (category as any).image[0]
+    : category.image;
   const galleryImages = (gallery || relatedGallery)?.images || [];
   const galleryFirstImage = Array.isArray(galleryImages) ? galleryImages[0] : null;
   const categoryImageUrl =
@@ -76,29 +94,6 @@ export default async function CategoryPage({
         tag.toLowerCase() !== (category.name || "").toLowerCase() &&
         tag.toLowerCase() !== "догляд за волоссям"
     );
-
-  // Map category slug to gallery slug
-  // Prefer related gallery from category (handles single or array relation), then slug map fallback
-  const getGallerySlug = (categorySlug: string): string | null => {
-    const galleryMap: Record<string, string> = {
-      manicure: 'gallery_manicure',
-      hair: 'gallery_hair',
-    };
-    return galleryMap[categorySlug] || null;
-  };
-
-  const relatedGallery =
-    (category as any)?.gallery && Array.isArray((category as any).gallery)
-      ? (category as any).gallery[0]
-      : (category as any)?.gallery;
-
-  const relatedGallerySlug =
-    relatedGallery?.slug ||
-    (category as any)?.gallerySlug ||
-    (category as any)?.gallery_slug ||
-    getGallerySlug(slug);
-
-  const gallery = relatedGallerySlug ? await fetchGalleryBySlug(relatedGallerySlug) : null;
 
   return (
     <div className="min-h-screen bg-beige-50 py-12 px-4">
