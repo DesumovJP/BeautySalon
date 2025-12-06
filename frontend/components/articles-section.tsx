@@ -163,6 +163,9 @@ export function ArticlesSection() {
   const [selectedArticle, setSelectedArticle] = useState<typeof articles[0] | null>(null);
   const [isOpen, setIsOpen] = useState(false);
   const sliderRef = useRef<HTMLDivElement | null>(null);
+  const [touchStartX, setTouchStartX] = useState(0);
+  const [touchStartY, setTouchStartY] = useState(0);
+  const [touchActive, setTouchActive] = useState(false);
 
   const scrollByAmount = (direction: "left" | "right") => {
     const container = sliderRef.current;
@@ -177,6 +180,29 @@ export function ArticlesSection() {
   const handleArticleClick = (article: typeof articles[0]) => {
     setSelectedArticle(article);
     setIsOpen(true);
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    const touch = e.targetTouches[0];
+    setTouchStartX(touch.clientX);
+    setTouchStartY(touch.clientY);
+    setTouchActive(false);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    const touch = e.targetTouches[0];
+    const dx = touch.clientX - touchStartX;
+    const dy = touch.clientY - touchStartY;
+    // If horizontal intent is clear, prevent page vertical scroll while swiping
+    if (Math.abs(dx) > 10 && Math.abs(dx) > Math.abs(dy)) {
+      e.preventDefault();
+      setTouchActive(true);
+    }
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchActive) return;
+    setTouchActive(false);
   };
 
   return (
