@@ -269,8 +269,8 @@ export async function fetchCategoryBySlug(slug: string): Promise<Category | null
 export async function fetchServicesByCategory(categorySlug: string): Promise<Service[]> {
   try {
     const slugFallbackMap: Record<string, string> = {
-      manicure: 'manikyur',
-      hair: 'strijka',
+      manicure: 'manicure',
+      hair: 'hair',
     };
 
     // First, get the category to get its ID
