@@ -65,16 +65,22 @@ export default async function CategoryPage({
     );
 
   // Map category slug to gallery slug
+  // Prefer related gallery from category, then slug map fallback
   const getGallerySlug = (categorySlug: string): string | null => {
     const galleryMap: Record<string, string> = {
-      'manikyur': 'galleryManik',
-      'strijka': 'galleryHair',
+      manikyur: 'gallery_manicure',
+      strijka: 'gallery_hair',
     };
     return galleryMap[categorySlug] || null;
   };
-  
-  const gallerySlug = getGallerySlug(slug);
-  const gallery = gallerySlug ? await fetchGalleryBySlug(gallerySlug) : null;
+
+  const relatedGallerySlug =
+    (category as any)?.gallery?.slug ||
+    (category as any)?.gallerySlug ||
+    (category as any)?.gallery_slug ||
+    getGallerySlug(slug);
+
+  const gallery = relatedGallerySlug ? await fetchGalleryBySlug(relatedGallerySlug) : null;
 
   return (
     <div className="min-h-screen bg-beige-50 py-12 px-4">

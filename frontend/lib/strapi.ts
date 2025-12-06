@@ -37,6 +37,10 @@ export interface Category {
   description?: string;
   longDescription?: string | any; // Long description for category hero section (can be rich text)
   image?: StrapiImage | null;
+  // Optional related gallery if populated on category
+  gallery?: {
+    slug?: string;
+  } | null;
   createdAt: string;
   updatedAt: string;
   publishedAt: string;
