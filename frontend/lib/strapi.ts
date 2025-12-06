@@ -1,6 +1,16 @@
 // Strapi API configuration and types
 
-const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL || 'http://localhost:1337';
+function normalizeBaseUrl(url?: string) {
+  if (!url || url.trim().length === 0) return 'http://localhost:1337';
+  const trimmed = url.trim();
+  if (trimmed.startsWith('http://') || trimmed.startsWith('https://')) {
+    return trimmed;
+  }
+  // Default to https if protocol missing
+  return `https://${trimmed}`;
+}
+
+const STRAPI_URL = normalizeBaseUrl(process.env.NEXT_PUBLIC_STRAPI_URL);
 
 export interface StrapiImage {
   id: number;
