@@ -139,7 +139,7 @@ export default async function Home() {
                 ))
             ) : (
               <div className="col-span-2 text-center py-12">
-                <p className="text-black/70">Категорії будуть відображені тут</p>
+                <p className="text-black/70">Категорії зʼявляться, щойно будуть додані в адмінці</p>
               </div>
             )}
           </div>
@@ -215,36 +215,42 @@ export default async function Home() {
                 name: "Олена Петренко",
                 text: "Чудовий салон! Майстри професійні, атмосфера затишна. Рекомендую!",
                 rating: 5,
+                avatar: "https://fra1.digitaloceanspaces.com/mymediastorage/Beauty%20Salon/9ae89402fd0a2d427b0815f1f4d83982_c31c45613f.jpg",
                 date: "2 тижні тому",
               },
               {
                 name: "Марія Коваленко",
                 text: "Дуже задоволена результатом. Обов'язково повернуся ще раз.",
                 rating: 5,
+                avatar: "https://fra1.digitaloceanspaces.com/mymediastorage/Beauty%20Salon/bdcd81e4a04765ae94dab2392ed9c0dd_b27be37541.jpg",
                 date: "3 тижні тому",
               },
               {
                 name: "Анна Шевченко",
                 text: "Найкращий салон у місті! Якість послуг на висоті.",
                 rating: 5,
+                avatar: "https://fra1.digitaloceanspaces.com/mymediastorage/Beauty%20Salon/d7fb2df714ddd3bf6aad1b64df2a2ee5_c780fedf2f.jpg",
                 date: "1 місяць тому",
               },
               {
                 name: "Катерина Бондаренко",
                 text: "Відмінний сервіс та якісні послуги. Персонал дуже уважний до деталей.",
                 rating: 5,
+                avatar: "https://fra1.digitaloceanspaces.com/mymediastorage/Beauty%20Salon/b66cb27422ca87e9015b302f69daf90e_e0b73109f6.jpg",
                 date: "2 місяці тому",
               },
               {
                 name: "Софія Мельник",
                 text: "Завжди залишаюся задоволена! Професійний підхід та чудові результати.",
                 rating: 5,
+                avatar: "https://fra1.digitaloceanspaces.com/mymediastorage/Beauty%20Salon/f921c2e37298a013e41c2cb93ceb0a3f_c462c21a8a.jpg",
                 date: "1 тиждень тому",
               },
               {
                 name: "Вікторія Ткаченко",
                 text: "Прекрасний салон з атмосферою розкоші. Обов'язково повернуся!",
                 rating: 5,
+                avatar: "https://fra1.digitaloceanspaces.com/mymediastorage/Beauty%20Salon/4cbc8084851718db382ee726ac77c9ea_a9b4dc718c.jpg",
                 date: "3 дні тому",
               },
             ]}
