@@ -71,6 +71,8 @@ export default async function CategoryPage({
   // Prefer related gallery from category (handles single or array relation), then slug map fallback
   const getGallerySlug = (categorySlug: string): string | null => {
     const galleryMap: Record<string, string> = {
+      manicure: 'gallery_manicure',
+      hair: 'gallery_hair',
       manikyur: 'gallery_manicure',
       strijka: 'gallery_hair',
     };
