@@ -27,6 +27,8 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Reduce rubber-band bounce on iOS at page edges */
+  overscroll-behavior-y: contain;
 }
 
 /* Display font for headings */
