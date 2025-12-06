@@ -17,6 +17,8 @@ export default async function Home() {
   let gallery: Gallery | null = null;
   const HERO_IMAGE_URL =
     "https://fra1.digitaloceanspaces.com/mymediastorage/Beauty%20Salon/Golovna_Hiro_Sekcziya_8f8033ecde.jpg";
+  const MOBILE_HERO_IMAGE_URL =
+    "https://fra1.digitaloceanspaces.com/mymediastorage/Beauty%20Salon/2148108775_175b01c7ca.jpg";
   
   try {
     categories = await fetchCategories();
@@ -36,11 +38,20 @@ export default async function Home() {
       <section className="relative min-h-screen flex items-center justify-center px-4 py-20 md:py-32">
         {/* Background Image */}
         <div className="absolute inset-0 hero-background">
+          {/* Desktop / Tablet */}
           <Image
             src={HERO_IMAGE_URL}
             alt="Beauty Room hero"
             fill
-            className="object-cover"
+            className="object-cover hidden sm:block"
+            priority
+          />
+          {/* Mobile */}
+          <Image
+            src={MOBILE_HERO_IMAGE_URL}
+            alt="Beauty Room hero mobile"
+            fill
+            className="object-cover sm:hidden"
             priority
           />
           {/* Elegant Overlay */}
