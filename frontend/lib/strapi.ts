@@ -182,10 +182,7 @@ export async function fetchCategories(): Promise<Category[]> {
     const url = `${STRAPI_URL}/api/categories?populate=*&sort=name:asc`;
     console.log('Fetching categories from:', url);
     
-    const response = await fetch(
-      url,
-      { next: { revalidate: 3600 } } // Revalidate every hour
-    );
+    const response = await fetch(url, { next: { revalidate: 60 } }); // Faster refresh for new categories
     
     if (!response.ok) {
       console.error('Failed to fetch categories:', response.status, response.statusText);
@@ -213,15 +210,10 @@ export async function fetchCategoryBySlug(slug: string): Promise<Category | null
     const url = `${STRAPI_URL}/api/categories?filters[slug][$eq]=${slug}&populate=*&publicationState=live`;
     console.log('Fetching category by slug:', slug, 'URL:', url);
     
-    const response = await fetch(
-      url,
-      { 
-        next: { revalidate: 3600 },
-        headers: {
-          'Content-Type': 'application/json',
-        }
-      }
-    );
+    const response = await fetch(url, { 
+      next: { revalidate: 60 },
+      headers: { 'Content-Type': 'application/json' }
+    });
     
     if (!response.ok) {
       console.error('Failed to fetch category:', response.status, response.statusText);
