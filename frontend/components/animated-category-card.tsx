@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Scissors, Sparkles } from "lucide-react";
+import { Scissors, Sparkles, Eye, HandPlatter } from "lucide-react";
 import { getImageUrl } from "@/lib/strapi";
 import { Category } from "@/lib/strapi";
 
@@ -21,10 +21,14 @@ export function AnimatedCategoryCard({
 
   const fallback = "https://fra1.digitaloceanspaces.com/mymediastorage/Beauty%20Salon/2149975508_ea1c3b32d5.jpg";
   const imageUrl = getImageUrl(category.image) || fallback;
-  const Icon =
-    category.slug === "manikyur" || category.slug === "manikyur"
-      ? Sparkles
-      : Scissors;
+  
+  // Визначаємо іконку залежно від слаг категорії
+  let Icon = Scissors; // за замовчуванням
+  if (category.slug === "korekcziya-briv") {
+    Icon = Eye;
+  } else if (category.slug === "manicure" || category.slug === "manikyur") {
+    Icon = HandPlatter;
+  }
 
   return (
     <Link

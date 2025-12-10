@@ -137,7 +137,7 @@ export default async function Home() {
               Оберіть категорію та знайдіть те, що підкреслить ваш характер — від делікатного догляду до сміливих образів.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 max-w-7xl mx-auto">
             {categories.length > 0 ? (
               categories
                 .filter((category) => category && category.name)
@@ -149,7 +149,7 @@ export default async function Home() {
                   />
                 ))
             ) : (
-              <div className="col-span-2 text-center py-12">
+              <div className="col-span-3 text-center py-12">
                 <p className="text-black/70">Категорії зʼявляться, щойно будуть додані в адмінці</p>
               </div>
             )}
