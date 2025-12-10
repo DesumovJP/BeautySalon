@@ -127,7 +127,7 @@ export function ReviewsCarousel({ reviews }: ReviewsCarouselProps) {
 
       {/* Carousel Container */}
       <div
-        className="overflow-hidden"
+        className="overflow-hidden touch-pan-y"
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}

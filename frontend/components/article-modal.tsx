@@ -28,7 +28,7 @@ export function ArticleModal({ article, open, onOpenChange }: ArticleModalProps)
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-4xl lg:max-w-5xl max-h-[88vh] sm:max-h-[95vh] overflow-y-auto p-0 gap-0 top-[8vh] translate-y-0 sm:top-[50%] sm:translate-y-[-50%]">
+      <DialogContent className="max-w-4xl lg:max-w-5xl h-screen max-h-screen sm:h-auto sm:max-h-[95vh] overflow-y-auto p-0 gap-0 top-0 translate-y-0 sm:top-[50%] sm:translate-y-[-50%]">
         {/* Article Image */}
         {article.image && (
           <div className="relative w-full h-56 md:h-80 lg:h-96 overflow-hidden">

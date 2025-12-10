@@ -85,30 +85,28 @@ export default async function Home() {
           </p>
 
           {/* Elegant Stats */}
-          <div className="flex flex-wrap justify-center gap-8 md:gap-12 mb-12 md:mb-16 hero-stats-animate">
+          <div className="grid grid-cols-3 gap-4 md:flex md:flex-wrap md:justify-center md:gap-8 mb-12 md:mb-16 hero-stats-animate">
             <div className="text-center number-animate">
-              <div className="text-4xl md:text-5xl lg:text-6xl font-light text-white mb-2 drop-shadow-lg">
+              <div className="text-3xl md:text-5xl lg:text-6xl font-light text-white mb-1 md:mb-2 drop-shadow-lg">
                 10+
               </div>
-              <p className="text-xs md:text-sm text-white/70 font-light tracking-wide uppercase">
+              <p className="text-[10px] md:text-sm text-white/70 font-light tracking-wide uppercase leading-snug">
                 років досвіду
               </p>
             </div>
-            <div className="hidden md:block w-px h-16 bg-white/20"></div>
             <div className="text-center number-animate" style={{ animationDelay: '0.1s' }}>
-              <div className="text-4xl md:text-5xl lg:text-6xl font-light text-white mb-2 drop-shadow-lg">
+              <div className="text-3xl md:text-5xl lg:text-6xl font-light text-white mb-1 md:mb-2 drop-shadow-lg">
                 5000+
               </div>
-              <p className="text-xs md:text-sm text-white/70 font-light tracking-wide uppercase">
+              <p className="text-[10px] md:text-sm text-white/70 font-light tracking-wide uppercase leading-snug">
                 задоволених клієнтів
               </p>
             </div>
-            <div className="hidden md:block w-px h-16 bg-white/20"></div>
             <div className="text-center number-animate" style={{ animationDelay: '0.2s' }}>
-              <div className="text-4xl md:text-5xl lg:text-6xl font-light text-white mb-2 drop-shadow-lg">
+              <div className="text-3xl md:text-5xl lg:text-6xl font-light text-white mb-1 md:mb-2 drop-shadow-lg">
                 4.9
               </div>
-              <p className="text-xs md:text-sm text-white/70 font-light tracking-wide uppercase">
+              <p className="text-[10px] md:text-sm text-white/70 font-light tracking-wide uppercase leading-snug">
                 середня оцінка
               </p>
             </div>
@@ -292,8 +290,8 @@ export default async function Home() {
                 title="Телефон"
                 content={
                   <>
-                    <a href="tel:+380XXXXXXXXX" className="text-xs md:text-lg text-black/70 hover:text-black transition-colors font-medium block mb-1 md:mb-2">
-                      +380 (XX) XXX XX XX
+                    <a href="tel:+380663888010" className="text-xs md:text-lg text-black/70 hover:text-black transition-colors font-medium block mb-1 md:mb-2">
+                      +380 (66) 388 80 10
                     </a>
                     <p className="text-[10px] md:text-sm text-black/50">Працюємо щодня з 9:00 до 20:00</p>
                   </>
@@ -307,12 +305,12 @@ export default async function Home() {
                 content={
                   <>
                     <a
-                      href="viber://chat?number=+380XXXXXXXXX"
-            target="_blank"
-            rel="noopener noreferrer"
+                      href="viber://chat?number=+380663888010"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-xs md:text-lg text-black/70 hover:text-black transition-colors font-medium block mb-1 md:mb-2"
                     >
-                      +380 (XX) XXX XX XX
+                      +380 (66) 388 80 10
                     </a>
                     <p className="text-[10px] md:text-sm text-black/50">Швидка відповідь у месенджері</p>
                   </>

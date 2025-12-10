@@ -11,7 +11,7 @@ const faqData = [
   {
     id: "1",
     question: "Як записатися на послугу?",
-    answer: "Ви можете записатися на послугу, зв'язавшись з нами за телефоном +380 (XX) XXX XX XX, через Telegram або Viber, або заповнивши форму на сайті. Наші адміністратори допоможуть вам обрати зручний час та майстра.",
+    answer: "Ви можете записатися на послугу, зв'язавшись з нами за телефоном +380 (66) 388 80 10, через Telegram або Viber, або заповнивши форму на сайті. Наші адміністратори допоможуть вам обрати зручний час та майстра.",
   },
   {
     id: "2",
@@ -103,7 +103,7 @@ export default function InfoPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <a
-                href="tel:+380XXXXXXXXX"
+                href="tel:+380663888010"
                 className="inline-flex items-center justify-center px-5 py-2.5 sm:px-6 sm:py-3 text-sm sm:text-base bg-black text-white rounded-full hover:bg-black/90 transition-all duration-300 shadow-md"
               >
                 Зателефонувати

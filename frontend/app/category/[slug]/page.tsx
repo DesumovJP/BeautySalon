@@ -16,11 +16,16 @@ export default async function CategoryPage({
   const HERO_FALLBACKS: Record<string, string> = {
     manikyur: "https://fra1.digitaloceanspaces.com/mymediastorage/Beauty%20Salon/0385ea2076e9903414e56142cf253258_a5ac482775.jpg",
     strijka: "https://fra1.digitaloceanspaces.com/mymediastorage/Beauty%20Salon/2149975508_ea1c3b32d5.jpg",
+    "korekcziya-briv": "https://fra1.digitaloceanspaces.com/mymediastorage/Beauty%20Salon/945d2234331c51cc79d98d5f2024a0e5_6798ed3549.jpg",
+    "korekciya-briv": "https://fra1.digitaloceanspaces.com/mymediastorage/Beauty%20Salon/945d2234331c51cc79d98d5f2024a0e5_6798ed3549.jpg",
   };
   const DEFAULT_HERO_FALLBACK = "https://fra1.digitaloceanspaces.com/mymediastorage/Beauty%20Salon/945d2234331c51cc79d98d5f2024a0e5_6798ed3549.jpg";
   // Handle both Promise and direct params (Next.js 15+ vs 14)
   const resolvedParams = await Promise.resolve(params);
-  const slug = resolvedParams.slug;
+  const slug =
+    resolvedParams.slug === "korekciya-briv"
+      ? "korekcziya-briv"
+      : resolvedParams.slug;
   
   console.log('Category page - slug:', slug);
   
@@ -53,6 +58,7 @@ export default async function CategoryPage({
       manicure: 'gallery_manicure',
       hair: 'gallery_hair',
       'korekcziya-briv': 'gallery-korekcziya-briv',
+      'korekciya-briv': 'gallery-korekcziya-briv',
     };
     return galleryMap[categorySlug] || null;
   };

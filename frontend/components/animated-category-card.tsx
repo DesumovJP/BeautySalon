@@ -23,7 +23,7 @@ export function AnimatedCategoryCard({
   
   // Визначаємо іконку залежно від слаг категорії
   let Icon = Scissors; // за замовчуванням
-  if (category.slug === "korekcziya-briv") {
+  if (category.slug === "korekcziya-briv" || category.slug === "korekciya-briv") {
     Icon = Sparkles;
   } else if (category.slug === "manicure" || category.slug === "manikyur") {
     Icon = Palette;

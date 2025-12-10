@@ -26,22 +26,22 @@ export function Footer() {
           <div className="col-span-2 md:col-span-1 space-y-5 md:space-y-6 text-center md:text-right">
             <h3 className="text-sm md:text-lg font-semibold text-black mb-3 md:mb-6">Контакти</h3>
             <div className="grid grid-cols-2 gap-4 md:flex md:flex-col md:space-y-5">
-              <a href="tel:+380XXXXXXXXX" className="flex items-center justify-center md:justify-end gap-3 md:gap-4 group">
-                <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-black/5 group-hover:bg-black flex items-center justify-center transition-all duration-300 group-hover:scale-110 flex-shrink-0">
+              <a href="tel:+380663888010" className="flex items-center justify-center md:justify-end gap-3 md:gap-4 group">
+                <div className="hidden md:flex w-8 h-8 md:w-10 md:h-10 rounded-full bg-black/5 group-hover:bg-black items-center justify-center transition-all duration-300 group-hover:scale-110 flex-shrink-0">
                   <Phone className="w-3.5 h-3.5 md:w-4 md:h-4 text-black/70 group-hover:text-white transition-colors" />
                 </div>
-                <div className="min-w-0 text-left md:text-right">
+                <div className="min-w-0 text-center md:text-right">
                   <p className="text-[10px] md:text-xs text-black/50 mb-0.5">Телефон</p>
                   <p className="text-xs md:text-base text-black/70 group-hover:text-black transition-colors font-medium break-all">
-                    +380 (XX) XXX XX XX
+                    +380 (66) 388 80 10
                   </p>
                 </div>
               </a>
               <a href="mailto:info@salon.com" className="flex items-center justify-center md:justify-end gap-3 md:gap-4 group">
-                <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-black/5 group-hover:bg-black flex items-center justify-center transition-all duration-300 group-hover:scale-110 flex-shrink-0">
+                <div className="hidden md:flex w-8 h-8 md:w-10 md:h-10 rounded-full bg-black/5 group-hover:bg-black items-center justify-center transition-all duration-300 group-hover:scale-110 flex-shrink-0">
                   <Mail className="w-3.5 h-3.5 md:w-4 md:h-4 text-black/70 group-hover:text-white transition-colors" />
                 </div>
-                <div className="min-w-0 text-left md:text-right">
+                <div className="min-w-0 text-center md:text-right">
                   <p className="text-[10px] md:text-xs text-black/50 mb-0.5">Email</p>
                   <p className="text-xs md:text-base text-black/70 group-hover:text-black transition-colors font-medium break-all">
                     info@salon.com
@@ -49,7 +49,7 @@ export function Footer() {
                 </div>
               </a>
               <div className="col-span-2 flex items-start justify-center md:justify-end gap-3 md:gap-4 group cursor-default">
-                <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-black/5 group-hover:bg-black flex items-center justify-center transition-all duration-300 group-hover:scale-110 flex-shrink-0 mt-0.5 md:mt-1">
+                <div className="hidden md:flex w-8 h-8 md:w-10 md:h-10 rounded-full bg-black/5 group-hover:bg-black items-center justify-center transition-all duration-300 group-hover:scale-110 flex-shrink-0 mt-0.5 md:mt-1">
                   <MapPin className="w-3.5 h-3.5 md:w-4 md:h-4 text-black/70 group-hover:text-white transition-colors" />
                 </div>
                 <div className="min-w-0 text-center md:text-right">
@@ -71,11 +71,12 @@ export function Footer() {
               © {new Date().getFullYear()} <span className="beauty-word font-semibold">BEAUTY</span> ROOM. Всі права захищені.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 md:gap-8 text-center">
-              <Link href="#" className="text-xs md:text-sm text-black/60 hover:text-black transition-all duration-300 link-elegant">
-                Політика конфіденційності
-              </Link>
-              <Link href="#" className="text-xs md:text-sm text-black/60 hover:text-black transition-all duration-300 link-elegant">
-                Умови використання
+              <Link
+                href="https://webbie2.vercel.app/uk"
+                target="_blank"
+                className="text-xs md:text-sm text-black/60 hover:text-black transition-all duration-300 link-elegant"
+              >
+                Розробка сайту Webbie
               </Link>
             </div>
           </div>

@@ -44,7 +44,7 @@ export function Header() {
   }, [isMenuOpen]);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-beige-300 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80 header-scroll">
+    <header className="sticky top-0 z-50 w-full border-b border-beige-300 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80 header-scroll relative">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
@@ -96,8 +96,11 @@ export function Header() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div ref={menuRef} className="md:hidden border-t border-beige-300 py-4 mobile-menu-enter">
-            <nav className="flex flex-col space-y-4 stagger-children">
+          <div
+            ref={menuRef}
+            className="md:hidden fixed inset-x-0 top-16 bg-white border-t border-beige-300 py-4 mobile-menu-enter shadow-lg z-40"
+          >
+            <nav className="flex flex-col space-y-4 stagger-children px-4">
               {navItems.map((item, index) => (
                 <Link
                   key={item.href}
