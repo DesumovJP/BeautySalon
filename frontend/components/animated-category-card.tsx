@@ -2,9 +2,11 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Scissors, Sparkles, Eye, HandPlatter } from "lucide-react";
 import { getImageUrl } from "@/lib/strapi";
 import { Category } from "@/lib/strapi";
+import { EyeIcon } from "./eye-icon";
+import { ManicureIcon } from "./manicure-icon";
+import { ScissorsIcon } from "./scissors-icon";
 
 interface AnimatedCategoryCardProps {
   category: Category;
@@ -23,11 +25,11 @@ export function AnimatedCategoryCard({
   const imageUrl = getImageUrl(category.image) || fallback;
   
   // Визначаємо іконку залежно від слаг категорії
-  let Icon = Scissors; // за замовчуванням
+  let Icon = ScissorsIcon; // за замовчуванням
   if (category.slug === "korekcziya-briv") {
-    Icon = Eye;
+    Icon = EyeIcon;
   } else if (category.slug === "manicure" || category.slug === "manikyur") {
-    Icon = HandPlatter;
+    Icon = ManicureIcon;
   }
 
   return (
