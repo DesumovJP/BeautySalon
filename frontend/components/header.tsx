@@ -85,12 +85,12 @@ export function Header() {
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               ref={toggleRef}
             >
+              <span className="text-xs font-normal text-black/60">Меню</span>
               {isMenuOpen ? (
                 <X className="h-5 w-5 transition-transform duration-300 rotate-90" />
               ) : (
                 <Menu className="h-5 w-5 transition-transform duration-300" />
               )}
-              <span className="text-sm font-medium text-black/80">Меню</span>
             </Button>
           </div>
         </div>
