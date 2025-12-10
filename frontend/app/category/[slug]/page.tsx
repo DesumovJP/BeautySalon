@@ -52,6 +52,7 @@ export default async function CategoryPage({
     const galleryMap: Record<string, string> = {
       manicure: 'gallery_manicure',
       hair: 'gallery_hair',
+      'korekcziya-briv': 'gallery-korekcziya-briv',
     };
     return galleryMap[categorySlug] || null;
   };
