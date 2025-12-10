@@ -247,7 +247,7 @@ export function ArticlesSection() {
             {articles.map((article, index) => (
               <div
                 key={index}
-                className="relative group cursor-pointer rounded-lg overflow-hidden h-80 md:h-96 flex flex-col card-hover-lift card-shine snap-center min-w-[78%] sm:min-w-[60%] md:min-w-[32%]"
+                className="relative group cursor-pointer rounded-lg overflow-hidden h-72 md:h-96 flex flex-col card-hover-lift card-shine snap-center min-w-[72%] sm:min-w-[60%] md:min-w-[32%]"
                 onClick={() => handleArticleClick(article)}
               >
                 {/* Background Image */}

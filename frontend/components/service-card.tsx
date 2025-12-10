@@ -60,7 +60,7 @@ export function ServiceCard({ service, index = 0 }: ServiceCardProps) {
           </div>
 
           {/* Price and Duration */}
-          <div className="flex flex-wrap items-center justify-between gap-3 pt-6 pb-6 border-t border-beige-200">
+          <div className="flex flex-wrap items-center justify-between gap-3 pt-4 pb-5">
             {service.duration && (
               <div className="flex items-center gap-2 px-4 py-2 bg-beige-100/90 border border-beige-200 rounded-full shadow-sm backdrop-blur-sm w-max">
                 <Clock className="w-3.5 h-3.5 text-black/60" />

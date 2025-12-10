@@ -23,50 +23,44 @@ export function Footer() {
           </div>
 
           {/* Contact */}
-          <div className="col-span-2 md:col-span-1 space-y-3 md:space-y-6 text-center md:text-right">
+          <div className="col-span-2 md:col-span-1 space-y-5 md:space-y-6 text-center md:text-right">
             <h3 className="text-sm md:text-lg font-semibold text-black mb-3 md:mb-6">Контакти</h3>
-            <ul className="space-y-3 md:space-y-5">
-              <li>
-                <a href="tel:+380XXXXXXXXX" className="flex items-center justify-center md:justify-end gap-3 md:gap-4 group">
-                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-black/5 group-hover:bg-black flex items-center justify-center transition-all duration-300 group-hover:scale-110 flex-shrink-0">
-                    <Phone className="w-3.5 h-3.5 md:w-4 md:h-4 text-black/70 group-hover:text-white transition-colors" />
-                  </div>
-                  <div className="min-w-0">
-                    <p className="text-[10px] md:text-xs text-black/50 mb-0.5">Телефон</p>
-                    <p className="text-xs md:text-base text-black/70 group-hover:text-black transition-colors font-medium break-all">
-                      +380 (XX) XXX XX XX
-                    </p>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="mailto:info@salon.com" className="flex items-center justify-center md:justify-end gap-3 md:gap-4 group">
-                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-black/5 group-hover:bg-black flex items-center justify-center transition-all duration-300 group-hover:scale-110 flex-shrink-0">
-                    <Mail className="w-3.5 h-3.5 md:w-4 md:h-4 text-black/70 group-hover:text-white transition-colors" />
-                  </div>
-                  <div className="min-w-0">
-                    <p className="text-[10px] md:text-xs text-black/50 mb-0.5">Email</p>
-                    <p className="text-xs md:text-base text-black/70 group-hover:text-black transition-colors font-medium break-all">
-                      info@salon.com
-                    </p>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <div className="flex items-start justify-center md:justify-end gap-3 md:gap-4 group cursor-default">
-                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-black/5 group-hover:bg-black flex items-center justify-center transition-all duration-300 group-hover:scale-110 flex-shrink-0 mt-0.5 md:mt-1">
-                    <MapPin className="w-3.5 h-3.5 md:w-4 md:h-4 text-black/70 group-hover:text-white transition-colors" />
-                  </div>
-                  <div className="min-w-0 text-center md:text-right">
-                    <p className="text-[10px] md:text-xs text-black/50 mb-0.5">Адреса</p>
-                    <p className="text-xs md:text-base text-black/70 group-hover:text-black transition-colors leading-relaxed">
-                      вул. Саксаганського, 1<br />
-                      м. Київ
-                    </p>
-                  </div>
+            <div className="grid grid-cols-2 gap-4 md:flex md:flex-col md:space-y-5">
+              <a href="tel:+380XXXXXXXXX" className="flex items-center justify-center md:justify-end gap-3 md:gap-4 group">
+                <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-black/5 group-hover:bg-black flex items-center justify-center transition-all duration-300 group-hover:scale-110 flex-shrink-0">
+                  <Phone className="w-3.5 h-3.5 md:w-4 md:h-4 text-black/70 group-hover:text-white transition-colors" />
                 </div>
-              </li>
-            </ul>
+                <div className="min-w-0 text-left md:text-right">
+                  <p className="text-[10px] md:text-xs text-black/50 mb-0.5">Телефон</p>
+                  <p className="text-xs md:text-base text-black/70 group-hover:text-black transition-colors font-medium break-all">
+                    +380 (XX) XXX XX XX
+                  </p>
+                </div>
+              </a>
+              <a href="mailto:info@salon.com" className="flex items-center justify-center md:justify-end gap-3 md:gap-4 group">
+                <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-black/5 group-hover:bg-black flex items-center justify-center transition-all duration-300 group-hover:scale-110 flex-shrink-0">
+                  <Mail className="w-3.5 h-3.5 md:w-4 md:h-4 text-black/70 group-hover:text-white transition-colors" />
+                </div>
+                <div className="min-w-0 text-left md:text-right">
+                  <p className="text-[10px] md:text-xs text-black/50 mb-0.5">Email</p>
+                  <p className="text-xs md:text-base text-black/70 group-hover:text-black transition-colors font-medium break-all">
+                    info@salon.com
+                  </p>
+                </div>
+              </a>
+              <div className="col-span-2 flex items-start justify-center md:justify-end gap-3 md:gap-4 group cursor-default">
+                <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-black/5 group-hover:bg-black flex items-center justify-center transition-all duration-300 group-hover:scale-110 flex-shrink-0 mt-0.5 md:mt-1">
+                  <MapPin className="w-3.5 h-3.5 md:w-4 md:h-4 text-black/70 group-hover:text-white transition-colors" />
+                </div>
+                <div className="min-w-0 text-center md:text-right">
+                  <p className="text-[10px] md:text-xs text-black/50 mb-0.5">Адреса</p>
+                  <p className="text-xs md:text-base text-black/70 group-hover:text-black transition-colors leading-relaxed">
+                    вул. Саксаганського, 1<br />
+                    м. Київ
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 

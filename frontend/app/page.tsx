@@ -35,7 +35,7 @@ export default async function Home() {
   return (
     <div className="min-h-screen bg-beige-50">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-4 py-20 md:py-32">
+      <section className="relative min-h-screen flex items-center justify-center px-4 py-20 md:py-32 -mt-16 md:-mt-20 pt-28 md:pt-36">
         {/* Background Image */}
         <div className="absolute inset-0 hero-background">
           {/* Desktop / Tablet */}

@@ -93,8 +93,16 @@ h1, h2, h3, h4, h5, h6,
 
 /* Section Utilities */
 .section-padding {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+}
+
+/* Line clamp utilities (since tailwind plugin may be absent) */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 @media (min-width: 768px) {

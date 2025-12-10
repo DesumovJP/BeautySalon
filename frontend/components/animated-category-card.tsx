@@ -32,7 +32,7 @@ export function AnimatedCategoryCard({
   return (
     <Link
       href={`/category/${category.slug}`}
-      className="relative group cursor-pointer rounded-lg overflow-hidden h-80 md:h-96 flex flex-col block card-hover-lift card-shine"
+      className="relative group cursor-pointer rounded-lg overflow-hidden h-72 md:h-96 flex flex-col block card-hover-lift card-shine"
     >
         {/* Background Image */}
         <div className="absolute inset-0">
@@ -55,18 +55,18 @@ export function AnimatedCategoryCard({
         {/* Category Icon Badge */}
         <div className="relative z-10 flex-shrink-0 p-4 md:p-6">
           <div className="inline-flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 group-hover:bg-white/30 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
-            <Icon className="w-6 h-6 md:w-7 md:h-7 text-white icon-hover" />
+            <Icon className="w-5 h-5 md:w-7 md:h-7 text-white icon-hover" />
           </div>
         </div>
 
         {/* Content - Always at bottom */}
         <div className="relative z-10 flex-grow flex flex-col justify-end p-4 md:p-6">
           <div className="mt-auto">
-            <h3 className="text-2xl md:text-3xl font-bold mb-3 text-white drop-shadow-lg group-hover:translate-y-[-4px] transition-transform duration-300">
+            <h3 className="text-xl md:text-3xl font-bold mb-3 text-white drop-shadow-lg group-hover:translate-y-[-4px] transition-transform duration-300">
               {category.name || "Категорія"}
             </h3>
             {category.description && (
-              <p className="text-white text-base md:text-lg drop-shadow-md line-clamp-2 min-h-[3.5rem]">
+              <p className="text-white text-base md:text-lg drop-shadow-md line-clamp-2 min-h-[3.5rem] overflow-hidden">
                 {category.description}
               </p>
             )}

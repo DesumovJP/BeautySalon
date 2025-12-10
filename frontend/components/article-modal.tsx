@@ -31,7 +31,7 @@ export function ArticleModal({ article, open, onOpenChange }: ArticleModalProps)
       <DialogContent className="max-w-4xl lg:max-w-5xl max-h-[88vh] sm:max-h-[95vh] overflow-y-auto p-0 gap-0 top-[8vh] translate-y-0 sm:top-[50%] sm:translate-y-[-50%]">
         {/* Article Image */}
         {article.image && (
-          <div className="relative w-full h-64 md:h-80 lg:h-96 overflow-hidden">
+          <div className="relative w-full h-56 md:h-80 lg:h-96 overflow-hidden">
             <Image
               src={article.image}
               alt={article.title}
@@ -43,7 +43,7 @@ export function ArticleModal({ article, open, onOpenChange }: ArticleModalProps)
           </div>
         )}
 
-        <div className="p-8 md:p-12 lg:p-16">
+        <div className="p-6 md:p-10 lg:p-16">
           <DialogHeader className="mb-8 md:mb-12">
             {/* Meta Info */}
             <div className="flex flex-wrap items-center gap-4 mb-6">
@@ -62,12 +62,12 @@ export function ArticleModal({ article, open, onOpenChange }: ArticleModalProps)
             </div>
 
             {/* Title */}
-            <DialogTitle className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4 leading-tight text-left">
+            <DialogTitle className="text-2xl md:text-4xl lg:text-5xl font-bold text-black mb-4 leading-tight text-left">
               {article.title}
             </DialogTitle>
 
             {/* Description */}
-            <DialogDescription className="text-lg md:text-xl text-black/70 leading-relaxed text-left font-light">
+            <DialogDescription className="text-base md:text-xl text-black/70 leading-relaxed text-left font-light">
               {article.description}
             </DialogDescription>
           </DialogHeader>

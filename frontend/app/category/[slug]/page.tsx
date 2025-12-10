@@ -99,8 +99,8 @@ export default async function CategoryPage({
   return (
     <div className="min-h-screen bg-beige-50 py-12 px-4">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-8">
-          <Button asChild variant="ghost">
+        <div className="mb-4">
+          <Button asChild variant="ghost" size="sm" className="h-10 px-0">
             <Link href="/">
               <ArrowLeft className="w-4 h-4 mr-2" />
               Назад
