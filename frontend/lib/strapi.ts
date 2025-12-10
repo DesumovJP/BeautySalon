@@ -260,8 +260,11 @@ export async function fetchCategoryBySlug(slug: string): Promise<Category | null
 
 export async function fetchServicesByCategory(categorySlug: string): Promise<Service[]> {
   try {
+    const normalizedSlug =
+      categorySlug === "korekciya-briv" ? "korekcziya-briv" : categorySlug;
+
     // First, get the category to get its ID
-    const category = await fetchCategoryBySlug(categorySlug);
+    const category = await fetchCategoryBySlug(normalizedSlug);
     if (!category) {
       console.log('Category not found for slug:', categorySlug);
       return [];
@@ -269,8 +272,8 @@ export async function fetchServicesByCategory(categorySlug: string): Promise<Ser
 
     // Try by category slug (relation name "category")
     {
-      const url = `${STRAPI_URL}/api/services?filters[category][slug][$eq]=${categorySlug}&populate=*&sort=isPopular:desc,name:asc`;
-      console.log('Fetching services by category slug:', categorySlug, 'URL:', url);
+      const url = `${STRAPI_URL}/api/services?filters[category][slug][$eq]=${normalizedSlug}&populate=*&sort=isPopular:desc,name:asc`;
+      console.log('Fetching services by category slug:', normalizedSlug, 'URL:', url);
       const response = await fetch(url, { next: { revalidate: 3600 } });
       if (response.ok) {
         const data = await response.json();
@@ -292,6 +295,21 @@ export async function fetchServicesByCategory(categorySlug: string): Promise<Ser
         const services = Array.isArray(data.data) ? data.data : [];
         if (services.length > 0) {
           console.log('Services found by category id:', services.length);
+          return services.filter((service: any) => service && service.id && service.name);
+        }
+      }
+    }
+
+    // Try by original slug (in case of alias mismatch)
+    if (normalizedSlug !== categorySlug) {
+      const url = `${STRAPI_URL}/api/services?filters[category][slug][$eq]=${categorySlug}&populate=*&sort=isPopular:desc,name:asc`;
+      console.log('Trying services by original slug alias:', categorySlug, 'URL:', url);
+      const response = await fetch(url, { next: { revalidate: 3600 } });
+      if (response.ok) {
+        const data = await response.json();
+        const services = Array.isArray(data.data) ? data.data : [];
+        if (services.length > 0) {
+          console.log('Services found by alias slug (category):', services.length);
           return services.filter((service: any) => service && service.id && service.name);
         }
       }
@@ -323,8 +341,21 @@ export async function fetchServicesByCategory(categorySlug: string): Promise<Ser
         const filtered = services.filter((service: any) => {
           const cat = service?.category;
           const cats = service?.categories;
-          const matchSingle = cat && (cat.id === category.id || cat.documentId === category.documentId);
-          const matchMany = Array.isArray(cats) && cats.some((c: any) => c.id === category.id || c.documentId === category.documentId);
+          const matchSingle =
+            cat &&
+            (cat.id === category.id ||
+              cat.documentId === category.documentId ||
+              cat.slug === normalizedSlug ||
+              cat.slug === categorySlug);
+          const matchMany =
+            Array.isArray(cats) &&
+            cats.some(
+              (c: any) =>
+                c.id === category.id ||
+                c.documentId === category.documentId ||
+                c.slug === normalizedSlug ||
+                c.slug === categorySlug
+            );
           return matchSingle || matchMany;
         });
         console.log('Fallback filtered services count:', filtered.length);

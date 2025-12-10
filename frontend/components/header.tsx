@@ -81,7 +81,7 @@ export function Header() {
             <Button
               variant="ghost"
               size="icon"
-              className="md:hidden transition-all duration-300 hover:scale-110"
+              className="md:hidden transition-all duration-300 hover:scale-110 flex items-center gap-2 pr-3 pl-2"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               ref={toggleRef}
             >
@@ -90,6 +90,7 @@ export function Header() {
               ) : (
                 <Menu className="h-5 w-5 transition-transform duration-300" />
               )}
+              <span className="text-sm font-medium text-black/80">Меню</span>
             </Button>
           </div>
         </div>

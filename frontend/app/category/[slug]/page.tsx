@@ -163,9 +163,9 @@ export default async function CategoryPage({
                     )}
                   </div>
 
-                  <div className="flex flex-wrap gap-3">
+                  <div className="grid grid-cols-2 gap-3 md:flex md:flex-wrap md:gap-3">
                     <Button
-                      className="h-12 px-5 bg-white text-black hover:bg-white/90"
+                      className="h-12 px-5 bg-white text-black hover:bg-white/90 w-full"
                       asChild
                     >
                       <Link href="#services">
@@ -175,7 +175,7 @@ export default async function CategoryPage({
                     </Button>
                     <Button
                       variant="outline"
-                      className="h-12 px-5 border-white/60 text-white hover:bg-white/10"
+                      className="h-12 px-5 border-white/60 text-white hover:bg-white/10 w-full"
                       asChild
                     >
                       <Link href="#gallery">Переглянути роботи</Link>
