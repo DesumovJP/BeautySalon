@@ -11,6 +11,7 @@ import { AnimatedContactCard } from "@/components/animated-contact-card";
 import { GallerySection } from "@/components/gallery-section";
 import { fetchCategories, fetchGalleryBySlug } from "@/lib/strapi";
 import type { Category, Gallery } from "@/lib/strapi";
+import { HeroStats } from "@/components/hero-stats";
 
 export default async function Home() {
   let categories: Category[] = [];
@@ -85,32 +86,7 @@ export default async function Home() {
           </p>
 
           {/* Elegant Stats */}
-          <div className="grid grid-cols-3 gap-4 md:flex md:flex-wrap md:justify-center md:gap-8 mb-12 md:mb-16 hero-stats-animate">
-            <div className="text-center number-animate">
-              <div className="text-3xl md:text-5xl lg:text-6xl font-light text-white mb-1 md:mb-2 drop-shadow-lg">
-                10+
-              </div>
-              <p className="text-[10px] md:text-sm text-white/70 font-light tracking-wide uppercase leading-snug">
-                років досвіду
-              </p>
-            </div>
-            <div className="text-center number-animate" style={{ animationDelay: '0.1s' }}>
-              <div className="text-3xl md:text-5xl lg:text-6xl font-light text-white mb-1 md:mb-2 drop-shadow-lg">
-                5000+
-              </div>
-              <p className="text-[10px] md:text-sm text-white/70 font-light tracking-wide uppercase leading-snug">
-                задоволених клієнтів
-              </p>
-            </div>
-            <div className="text-center number-animate" style={{ animationDelay: '0.2s' }}>
-              <div className="text-3xl md:text-5xl lg:text-6xl font-light text-white mb-1 md:mb-2 drop-shadow-lg">
-                4.9
-              </div>
-              <p className="text-[10px] md:text-sm text-white/70 font-light tracking-wide uppercase leading-snug">
-                середня оцінка
-              </p>
-            </div>
-          </div>
+          <HeroStats />
 
           {/* CTA Buttons - Elegant */}
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center hero-buttons-animate">

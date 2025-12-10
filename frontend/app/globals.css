@@ -55,6 +55,11 @@ h1, h2, h3, h4, h5, h6,
   transform: skew(-8deg);
   transform-origin: center;
   margin-right: 0.1em;
+  background: linear-gradient(120deg, #ffffff 0%, #d9d4c7 30%, #ffffff 60%, #e6e1d5 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: beautyShine 3s ease-in-out infinite;
 }
 
 /* Letter spacing utility */
@@ -430,6 +435,18 @@ html {
   }
   50% {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@keyframes beautyShine {
+  0% {
+    background-position: 200% 0;
+  }
+  50% {
+    background-position: 50% 0;
+  }
+  100% {
+    background-position: -50% 0;
   }
 }
 
