@@ -57,3 +57,12 @@ This project runs a Strapi v5 backend and a Next.js 16 frontend.
 - CORS errors absent in browser console.
 
 
+
+
+
+
+
+
+
+
+

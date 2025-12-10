@@ -71,3 +71,12 @@
 - Окремо: `cd frontend && cp env.example .env.local && yarn install && yarn dev`
 - Перевірити: сторінки відкриваються, API відповідає, картинки з локального Strapi вантажаться.
 
+
+
+
+
+
+
+
+
+

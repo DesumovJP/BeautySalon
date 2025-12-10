@@ -503,8 +503,8 @@ html {
   will-change: transform;
 }
 
-.image-zoom:hover {
-  transform: scale(1.05);
+.group:hover .image-zoom {
+  transform: scale(1.1);
 }
 
 /* Smooth Fade In for Sections */
