@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { ScrollToTop } from "@/components/scroll-to-top";
+import { FloatingContact } from "@/components/floating-contact";
 
 const playfairDisplay = Playfair_Display({
   variable: "--font-display",
@@ -36,6 +37,7 @@ export default function RootLayout({
         <ScrollToTop />
         <Header />
         <main>{children}</main>
+        <FloatingContact />
         <Footer />
       </body>
     </html>

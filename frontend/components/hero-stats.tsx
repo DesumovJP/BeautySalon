@@ -10,7 +10,7 @@ type Stat = {
   duration?: number;
 };
 
-function useCountUp(target: number, duration = 1200, delay = 0) {
+function useCountUp(target: number, duration = 2400, delay = 0) {
   const [value, setValue] = useState(0);
   const startTs = useRef<number | null>(null);
   const rafId = useRef<number | null>(null);
@@ -53,9 +53,9 @@ function useCountUp(target: number, duration = 1200, delay = 0) {
 export function HeroStats() {
   const stats: Stat[] = useMemo(
     () => [
-      { label: "років досвіду", value: 10, suffix: "+", delay: 0 },
-      { label: "задоволених клієнтів", value: 5000, suffix: "+", delay: 150 },
-      { label: "середня оцінка", value: 4.9, suffix: "", delay: 300, duration: 900 },
+      { label: "років досвіду", value: 10, suffix: "+", delay: 0, duration: 2200 },
+      { label: "задоволених клієнтів", value: 5000, suffix: "+", delay: 150, duration: 2200 },
+      { label: "середня оцінка", value: 4.9, suffix: "", delay: 300, duration: 2800 },
     ],
     []
   );
@@ -83,3 +83,4 @@ export function HeroStats() {
     </div>
   );
 }
+

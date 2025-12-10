@@ -7,6 +7,7 @@ import { Menu, X, Phone } from "lucide-react";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showNavHint, setShowNavHint] = useState(true);
   const menuRef = useRef<HTMLDivElement | null>(null);
   const toggleRef = useRef<HTMLButtonElement | null>(null);
 
@@ -41,6 +42,17 @@ export function Header() {
       document.removeEventListener("mousedown", handleClickOutside);
       document.removeEventListener("touchstart", handleClickOutside);
     };
+  }, [isMenuOpen]);
+
+  useEffect(() => {
+    if (!showNavHint) return;
+
+    const timer = setTimeout(() => setShowNavHint(false), 4200);
+    return () => clearTimeout(timer);
+  }, [showNavHint]);
+
+  useEffect(() => {
+    if (isMenuOpen) setShowNavHint(false);
   }, [isMenuOpen]);
 
   return (
@@ -81,16 +93,27 @@ export function Header() {
             <Button
               variant="ghost"
               size="icon"
-              className="md:hidden transition-all duration-300 hover:scale-110 flex items-center gap-2 pr-3 pl-2"
+              className="md:hidden relative h-11 w-11 rounded-full border border-beige-300 bg-white/95 text-black shadow-[0_8px_18px_-14px_rgba(0,0,0,0.3)] hover:shadow-[0_12px_22px_-14px_rgba(0,0,0,0.28)] hover:-translate-y-0.5 active:scale-95 transition-all duration-300 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-black/70 overflow-visible menu-toggle-button"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               ref={toggleRef}
+              aria-label={isMenuOpen ? "Закрити меню навігації" : "Відкрити меню навігації"}
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-navigation"
+              title={isMenuOpen ? "Закрити навігацію" : "Відкрити навігацію"}
             >
-              <span className="text-xs font-normal text-black/60">Меню</span>
+              <span className="sr-only">{isMenuOpen ? "Закрити меню" : "Відкрити меню"}</span>
+              <span className="menu-glow" aria-hidden />
               {isMenuOpen ? (
                 <X className="h-5 w-5 transition-transform duration-300 rotate-90" />
               ) : (
                 <Menu className="h-5 w-5 transition-transform duration-300" />
               )}
+              {!isMenuOpen && showNavHint && (
+                <span className="menu-hint menu-hint-visible" aria-hidden>
+                  Навігація
+                </span>
+              )}
+              <span className="absolute inset-0 rounded-full border border-black/10 pointer-events-none" aria-hidden />
             </Button>
           </div>
         </div>
@@ -99,6 +122,7 @@ export function Header() {
         {isMenuOpen && (
           <div
             ref={menuRef}
+            id="mobile-navigation"
             className="md:hidden fixed inset-x-0 top-16 bg-white border-t border-beige-300 py-4 mobile-menu-enter shadow-lg z-40"
           >
             <nav className="flex flex-col space-y-4 stagger-children px-4">

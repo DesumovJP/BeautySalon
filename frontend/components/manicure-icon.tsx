@@ -20,3 +20,4 @@ export function ManicureIcon({ className }: { className?: string }) {
     </svg>
   );
 }
+
