@@ -10,7 +10,6 @@ import {
 import { Phone, MessageCircle, Instagram } from "lucide-react";
 import Link from "next/link";
 import { TelegramIcon } from "@/components/telegram-icon";
-import { ViberIcon } from "@/components/viber-icon";
 
 interface ContactModalProps {
   open: boolean;
@@ -50,7 +49,7 @@ export function ContactModal({ open, onOpenChange }: ContactModalProps) {
           {/* Viber */}
           <div className="flex items-start gap-4 p-4 rounded-lg border border-beige-300 bg-beige-50/50 hover:bg-beige-100/50 transition-colors">
             <div className="flex-shrink-0 w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center">
-              <ViberIcon className="h-5 w-5 text-purple-600" />
+              <Phone className="h-5 w-5 text-purple-600" />
             </div>
             <div className="flex-1 min-w-0">
               <h3 className="font-semibold text-black mb-1">Viber</h3>
