@@ -60,13 +60,13 @@ export function AnimatedCategoryCard({
         </div>
 
         {/* Content - Always at bottom */}
-        <div className="relative z-10 flex-grow flex flex-col justify-end p-4 md:p-6">
-          <div className="mt-auto">
+        <div className="relative z-10 flex-grow flex flex-col justify-end">
+          <div className="mt-auto px-4 pb-4 md:px-6 md:pb-6">
             <h3 className="text-xl md:text-3xl font-bold mb-3 text-white drop-shadow-lg group-hover:translate-y-[-4px] transition-transform duration-300">
               {category.name || "Категорія"}
             </h3>
             {category.description && (
-              <p className="text-white text-base md:text-lg drop-shadow-md line-clamp-2 min-h-[3.5rem] max-h-[3.5rem] overflow-hidden leading-snug">
+              <p className="text-white text-base md:text-lg drop-shadow-md line-clamp-2 overflow-hidden leading-snug">
                 {category.description}
               </p>
             )}

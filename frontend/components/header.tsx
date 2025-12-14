@@ -2,12 +2,17 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Phone } from "lucide-react";
+import { ContactModal } from "@/components/contact-modal";
 
 export function Header() {
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showNavHint, setShowNavHint] = useState(true);
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement | null>(null);
   const toggleRef = useRef<HTMLButtonElement | null>(null);
 
@@ -56,9 +61,9 @@ export function Header() {
   }, [isMenuOpen]);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-beige-300 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80 header-scroll relative">
+    <header className="sticky top-0 z-50 w-full border-b border-beige-300 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80 header-scroll relative min-h-[4rem]">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="flex h-16 items-center justify-between">
+        <div className="flex h-16 items-center justify-between min-h-[4rem]">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 group">
             <span className="text-xl md:text-2xl font-bold text-black tracking-tight group-hover:opacity-80 transition-all duration-300 group-hover:scale-105">
@@ -82,12 +87,23 @@ export function Header() {
 
           {/* CTA Button & Mobile Menu */}
           <div className="flex items-center gap-4">
-            <Button asChild size="sm" className="hidden sm:flex bg-black text-white hover:bg-black/90 btn-premium">
-              <Link href="/#contact">
+            {isHomePage ? (
+              <Button asChild size="sm" className="hidden sm:flex bg-black text-white hover:bg-black/90 btn-premium">
+                <Link href="#contact">
+                  <Phone className="w-4 h-4 mr-2 icon-hover" />
+                  Записатися
+                </Link>
+              </Button>
+            ) : (
+              <Button
+                size="sm"
+                className="hidden sm:flex bg-black text-white hover:bg-black/90 btn-premium"
+                onClick={() => setIsContactModalOpen(true)}
+              >
                 <Phone className="w-4 h-4 mr-2 icon-hover" />
                 Записатися
-              </Link>
-            </Button>
+              </Button>
+            )}
 
             {/* Mobile Menu Button */}
             <Button
@@ -137,16 +153,34 @@ export function Header() {
                   {item.label}
                 </Link>
               ))}
-              <Button asChild className="mt-2 bg-black text-white hover:bg-black/90 btn-premium" style={{ animationDelay: `${navItems.length * 0.05}s` }}>
-                <Link href="/#contact" onClick={() => setIsMenuOpen(false)}>
+              {isHomePage ? (
+                <Button asChild className="mt-2 bg-black text-white hover:bg-black/90 btn-premium" style={{ animationDelay: `${navItems.length * 0.05}s` }}>
+                  <Link href="#contact" onClick={() => setIsMenuOpen(false)}>
+                    <Phone className="w-4 h-4 mr-2 icon-hover" />
+                    Записатися
+                  </Link>
+                </Button>
+              ) : (
+                <Button
+                  className="mt-2 bg-black text-white hover:bg-black/90 btn-premium"
+                  style={{ animationDelay: `${navItems.length * 0.05}s` }}
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    setIsContactModalOpen(true);
+                  }}
+                >
                   <Phone className="w-4 h-4 mr-2 icon-hover" />
                   Записатися
-                </Link>
-              </Button>
+                </Button>
+              )}
             </nav>
           </div>
         )}
       </div>
+      <ContactModal
+        open={isContactModalOpen}
+        onOpenChange={setIsContactModalOpen}
+      />
     </header>
   );
 }

@@ -550,6 +550,31 @@ html {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Fix header height on mobile to prevent jumping */
+header {
+  height: 4rem;
+  min-height: 4rem;
+  max-height: 4rem;
+}
+
+@media (max-width: 767px) {
+  header {
+    height: 4rem !important;
+    min-height: 4rem !important;
+    max-height: 4rem !important;
+  }
+  
+  header > div {
+    height: 4rem;
+    min-height: 4rem;
+  }
+  
+  header > div > div {
+    height: 4rem;
+    min-height: 4rem;
+  }
+}
+
 /* Mobile Menu Button Enhancement */
 .menu-toggle-button {
   box-shadow: 0 10px 22px -16px rgba(0, 0, 0, 0.26);
@@ -698,15 +723,22 @@ html {
   width: 48px;
   height: 48px;
   border-radius: 999px;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0));
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   color: #0f0f0f;
   font-weight: 700;
   font-size: 18px;
   border: 1px solid rgba(0, 0, 0, 0.08);
   box-shadow: 0 12px 28px -18px rgba(0, 0, 0, 0.3);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
   cursor: pointer;
-  backdrop-filter: blur(6px);
+}
+
+@supports (backdrop-filter: blur(8px)) {
+  .floating-contact-handle {
+    background: rgba(255, 255, 255, 0.8);
+  }
 }
 
 .floating-contact-handle:hover,
