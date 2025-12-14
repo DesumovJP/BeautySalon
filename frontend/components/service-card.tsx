@@ -1,10 +1,14 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Service, getImageUrl } from "@/lib/strapi";
 import { Clock, Star } from "lucide-react";
+import { ContactModal } from "@/components/contact-modal";
 
 interface ServiceCardProps {
   service: Service;
@@ -13,6 +17,9 @@ interface ServiceCardProps {
 
 export function ServiceCard({ service, index = 0 }: ServiceCardProps) {
   const imageUrl = getImageUrl(service.image);
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   return (
     <Card className="h-full overflow-hidden border border-beige-200 bg-white/90 backdrop-blur-md rounded-2xl shadow-lg hover:shadow-xl hover:border-black/20 transition-all duration-300 group card-shine">
@@ -73,11 +80,24 @@ export function ServiceCard({ service, index = 0 }: ServiceCardProps) {
           </div>
 
           {/* CTA Button */}
-          <Button className="w-full h-11 md:h-11 text-sm md:text-sm bg-white text-black border border-black/10 hover:bg-black/5 rounded-full font-medium shadow-sm transition-all">
-            Записатися
-          </Button>
+          {isHomePage ? (
+            <Button asChild className="w-full h-11 md:h-11 text-sm md:text-sm bg-white text-black border border-black/10 hover:bg-black/5 rounded-full font-medium shadow-sm transition-all">
+              <Link href="#contact">Записатися</Link>
+            </Button>
+          ) : (
+            <Button 
+              className="w-full h-11 md:h-11 text-sm md:text-sm bg-white text-black border border-black/10 hover:bg-black/5 rounded-full font-medium shadow-sm transition-all"
+              onClick={() => setIsContactModalOpen(true)}
+            >
+              Записатися
+            </Button>
+          )}
         </div>
       </div>
+      <ContactModal
+        open={isContactModalOpen}
+        onOpenChange={setIsContactModalOpen}
+      />
     </Card>
   );
 }
