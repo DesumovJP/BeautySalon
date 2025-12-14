@@ -162,23 +162,23 @@ export default async function Home() {
               </CardHeader>
             </Card>
             <Card className="text-center hover:shadow-xl transition-all duration-300 border-beige-200 hover:border-black/20 group bg-white">
-              <CardHeader className="p-3 sm:p-4 md:p-8">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 md:mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 text-white" />
+              <CardHeader className="p-3 sm:p-8">
+                <div className="w-10 h-10 sm:w-16 sm:h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <Sparkles className="w-5 h-5 sm:w-8 sm:h-8 text-white" />
                 </div>
-                <CardTitle className="text-xs md:text-card-title mb-2 md:mb-4">Преміальні матеріали</CardTitle>
-                <CardDescription className="text-[10px] md:text-body text-black/70 leading-tight md:leading-relaxed">
+                <CardTitle className="text-xs sm:text-card-title mb-2 sm:mb-4">Преміальні матеріали</CardTitle>
+                <CardDescription className="text-[10px] sm:text-body text-black/70 leading-tight sm:leading-relaxed">
                   Використовуємо виключно сертифіковані продукти від світових брендів преміум-класу. Ваше здоров'я та краса - наш пріоритет.
                 </CardDescription>
               </CardHeader>
             </Card>
             <Card className="text-center hover:shadow-xl transition-all duration-300 border-beige-200 hover:border-black/20 group bg-white">
-              <CardHeader className="p-3 sm:p-4 md:p-8">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 md:mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <Star className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 text-white fill-white" />
+              <CardHeader className="p-3 sm:p-8">
+                <div className="w-10 h-10 sm:w-16 sm:h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <Star className="w-5 h-5 sm:w-8 sm:h-8 text-white fill-white" />
                 </div>
-                <CardTitle className="text-xs md:text-card-title mb-2 md:mb-4">Індивідуальний підхід</CardTitle>
-                <CardDescription className="text-[10px] md:text-body text-black/70 leading-tight md:leading-relaxed">
+                <CardTitle className="text-xs sm:text-card-title mb-2 sm:mb-4">Індивідуальний підхід</CardTitle>
+                <CardDescription className="text-[10px] sm:text-body text-black/70 leading-tight sm:leading-relaxed">
                   Кожна клієнтка отримує персональну консультацію та програму догляду, розроблену спеціально для неї. Ваша унікальність - наша мета.
                 </CardDescription>
               </CardHeader>
