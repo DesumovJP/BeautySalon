@@ -72,11 +72,11 @@ export function Footer() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 md:gap-8 text-center">
               <Link
-                href="https://webbie2.vercel.app/uk"
+                href="https://webbie.team"
                 target="_blank"
                 className="text-xs md:text-sm text-black/60 hover:text-black transition-all duration-300 link-elegant"
               >
-                Розробка сайту Webbie
+                Розробка сайту - Webbie.team
               </Link>
             </div>
           </div>
