@@ -166,8 +166,8 @@ export default async function Home() {
                 <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 md:mb-6 group-hover:scale-110 transition-transform duration-300">
                   <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 text-white" />
                 </div>
-                <CardTitle className="text-xs sm:text-sm md:text-card-title mb-2 sm:mb-3 md:mb-4">Преміальні матеріали</CardTitle>
-                <CardDescription className="text-[10px] sm:text-xs md:text-body text-black/70 leading-tight sm:leading-relaxed">
+                <CardTitle className="text-xs md:text-card-title mb-2 md:mb-4">Преміальні матеріали</CardTitle>
+                <CardDescription className="text-[10px] md:text-body text-black/70 leading-tight md:leading-relaxed">
                   Використовуємо виключно сертифіковані продукти від світових брендів преміум-класу. Ваше здоров'я та краса - наш пріоритет.
                 </CardDescription>
               </CardHeader>
@@ -177,8 +177,8 @@ export default async function Home() {
                 <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 md:mb-6 group-hover:scale-110 transition-transform duration-300">
                   <Star className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 text-white fill-white" />
                 </div>
-                <CardTitle className="text-xs sm:text-sm md:text-card-title mb-2 sm:mb-3 md:mb-4">Індивідуальний підхід</CardTitle>
-                <CardDescription className="text-[10px] sm:text-xs md:text-body text-black/70 leading-tight sm:leading-relaxed">
+                <CardTitle className="text-xs md:text-card-title mb-2 md:mb-4">Індивідуальний підхід</CardTitle>
+                <CardDescription className="text-[10px] md:text-body text-black/70 leading-tight md:leading-relaxed">
                   Кожна клієнтка отримує персональну консультацію та програму догляду, розроблену спеціально для неї. Ваша унікальність - наша мета.
                 </CardDescription>
               </CardHeader>
