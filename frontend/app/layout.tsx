@@ -36,7 +36,7 @@ export default function RootLayout({
       >
         <ScrollToTop />
         <Header />
-        <main>{children}</main>
+        <main className="overscroll-none">{children}</main>
         <FloatingContact />
         <Footer />
       </body>

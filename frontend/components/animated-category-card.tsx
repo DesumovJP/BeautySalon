@@ -66,7 +66,7 @@ export function AnimatedCategoryCard({
               {category.name || "Категорія"}
             </h3>
             {category.description && (
-              <p className="text-white text-base md:text-lg drop-shadow-md line-clamp-2 min-h-[3.5rem] overflow-hidden">
+              <p className="text-white text-base md:text-lg drop-shadow-md line-clamp-2 min-h-[3.5rem] max-h-[3.5rem] overflow-hidden leading-snug">
                 {category.description}
               </p>
             )}

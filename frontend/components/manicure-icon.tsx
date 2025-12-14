@@ -21,3 +21,4 @@ export function ManicureIcon({ className }: { className?: string }) {
   );
 }
 
+

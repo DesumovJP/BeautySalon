@@ -38,7 +38,14 @@ export default async function Home() {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-4 py-20 md:py-32 -mt-16 md:-mt-20 pt-28 md:pt-36">
         {/* Background Image */}
-        <div className="absolute inset-0 hero-background">
+        <div 
+          className="absolute inset-0 hero-background"
+          style={{ 
+            overscrollBehavior: 'none', 
+            overscrollBehaviorY: 'none', 
+            touchAction: 'none' 
+          }}
+        >
           {/* Desktop / Tablet */}
           <Image
             src={HERO_IMAGE_URL}

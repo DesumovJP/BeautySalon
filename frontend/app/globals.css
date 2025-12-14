@@ -27,8 +27,11 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* Reduce rubber-band bounce on iOS at page edges */
-  overscroll-behavior-y: contain;
+  /* Prevent bounce on iOS at page edges */
+  overscroll-behavior: none;
+  overscroll-behavior-y: none;
+  overscroll-behavior-x: none;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Display font for headings */
@@ -144,6 +147,9 @@ h1, h2, h3, h4, h5, h6,
 /* Smooth Scrolling */
 html {
   scroll-behavior: smooth;
+  overscroll-behavior: none;
+  overscroll-behavior-y: none;
+  overscroll-behavior-x: none;
 }
 
 /* Custom Scrollbar - Premium Style */
@@ -608,11 +614,29 @@ html {
   background: #0f0f0f;
   transform: translateY(-50%);
   box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
 }
 
 .menu-hint-visible {
   opacity: 1;
   transform: translateY(-50%) translateX(0) scale(1);
+}
+
+.menu-hint-visible::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (max-width: 767px) {
+  .menu-hint {
+    display: none !important;
+  }
+  
+  .menu-hint::before {
+    display: none !important;
+  }
 }
 
 .floating-contact {
@@ -745,6 +769,25 @@ html {
 .card-shine:hover::before {
   left: 150%;
   transform: translateX(200%) skewX(-12deg);
+}
+
+/* Overscroll behavior for main and sections */
+main, section {
+  overscroll-behavior: none;
+  overscroll-behavior-y: none;
+  overscroll-behavior-x: none;
+  touch-action: pan-y;
+}
+
+/* Prevent bounce on fixed background elements */
+div[class*="fixed"][class*="inset-0"],
+div.fixed.inset-0,
+div[class*="absolute"][class*="inset-0"][class*="hero-background"] {
+  overscroll-behavior: none !important;
+  overscroll-behavior-y: none !important;
+  overscroll-behavior-x: none !important;
+  touch-action: none !important;
+  will-change: transform;
 }
 
 /* Rich Text Content Styling */
