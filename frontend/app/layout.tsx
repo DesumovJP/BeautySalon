@@ -24,6 +24,13 @@ export const metadata: Metadata = {
   description: "Преміальний салон краси BEAUTY ROOM в центрі Києва. Професійні стрижки, манікюр, догляд за волоссям та обличчям. Досвідчені майстри, якісні матеріали, індивідуальний підхід. Записуйтесь зараз!",
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 0.9,
+  maximumScale: 1.0,
+  userScalable: false,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
