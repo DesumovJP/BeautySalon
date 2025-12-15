@@ -166,7 +166,7 @@ export default async function Home() {
                 <div className="w-10 h-10 sm:w-16 sm:h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-6 group-hover:scale-110 transition-transform duration-300">
                   <Sparkles className="w-5 h-5 sm:w-8 sm:h-8 text-white" />
                 </div>
-                <CardTitle className="text-xs sm:text-card-title mb-2 sm:mb-4">Преміальні матеріали</CardTitle>
+                <CardTitle className="text-xs md:text-[clamp(1.25rem,2vw+0.25rem,1.5rem)] md:font-semibold md:leading-[1.3] mb-2 md:mb-4">Преміальні матеріали</CardTitle>
                 <CardDescription className="text-xs sm:text-base text-black/70 leading-relaxed">
                   Використовуємо виключно сертифіковані продукти від світових брендів преміум-класу. Ваше здоров'я та краса - наш пріоритет.
                 </CardDescription>
@@ -177,7 +177,7 @@ export default async function Home() {
                 <div className="w-10 h-10 sm:w-16 sm:h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-6 group-hover:scale-110 transition-transform duration-300">
                   <Star className="w-5 h-5 sm:w-8 sm:h-8 text-white fill-white" />
                 </div>
-                <CardTitle className="text-xs sm:text-card-title mb-2 sm:mb-4">Індивідуальний підхід</CardTitle>
+                <CardTitle className="text-xs md:text-[clamp(1.25rem,2vw+0.25rem,1.5rem)] md:font-semibold md:leading-[1.3] mb-2 md:mb-4">Індивідуальний підхід</CardTitle>
                 <CardDescription className="text-xs sm:text-base text-black/70 leading-relaxed">
                   Кожна клієнтка отримує персональну консультацію та програму догляду, розроблену спеціально для неї. Ваша унікальність - наша мета.
                 </CardDescription>
