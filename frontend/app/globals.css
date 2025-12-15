@@ -550,30 +550,6 @@ html {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Fix header height on mobile to prevent jumping */
-header {
-  height: 4rem;
-  min-height: 4rem;
-  max-height: 4rem;
-}
-
-@media (max-width: 767px) {
-  header {
-    height: 4rem !important;
-    min-height: 4rem !important;
-    max-height: 4rem !important;
-  }
-  
-  header > div {
-    height: 4rem;
-    min-height: 4rem;
-  }
-  
-  header > div > div {
-    height: 4rem;
-    min-height: 4rem;
-  }
-}
 
 /* Mobile Menu Button Enhancement */
 .menu-toggle-button {

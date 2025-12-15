@@ -156,7 +156,7 @@ export default async function Home() {
                   <Scissors className="w-8 h-8 text-white" />
                 </div>
                 <CardTitle className="text-card-title mb-4">Професійні майстри</CardTitle>
-                <CardDescription className="text-body text-black/70 leading-relaxed">
+                <CardDescription className="text-base text-black/70 leading-relaxed">
                   Наші спеціалісти мають понад 10 років досвіду та регулярно проходять навчання у провідних майстрів Європи. Кожен майстер - це справжній художник краси.
                 </CardDescription>
               </CardHeader>
@@ -167,7 +167,7 @@ export default async function Home() {
                   <Sparkles className="w-5 h-5 sm:w-8 sm:h-8 text-white" />
                 </div>
                 <CardTitle className="text-xs sm:text-card-title mb-2 sm:mb-4">Преміальні матеріали</CardTitle>
-                <CardDescription className="text-[10px] sm:text-body text-black/70 leading-tight sm:leading-relaxed">
+                <CardDescription className="text-xs sm:text-base text-black/70 leading-relaxed">
                   Використовуємо виключно сертифіковані продукти від світових брендів преміум-класу. Ваше здоров'я та краса - наш пріоритет.
                 </CardDescription>
               </CardHeader>
@@ -178,7 +178,7 @@ export default async function Home() {
                   <Star className="w-5 h-5 sm:w-8 sm:h-8 text-white fill-white" />
                 </div>
                 <CardTitle className="text-xs sm:text-card-title mb-2 sm:mb-4">Індивідуальний підхід</CardTitle>
-                <CardDescription className="text-[10px] sm:text-body text-black/70 leading-tight sm:leading-relaxed">
+                <CardDescription className="text-xs sm:text-base text-black/70 leading-relaxed">
                   Кожна клієнтка отримує персональну консультацію та програму догляду, розроблену спеціально для неї. Ваша унікальність - наша мета.
                 </CardDescription>
               </CardHeader>
