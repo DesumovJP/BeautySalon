@@ -6,7 +6,6 @@ import { Scissors, Sparkles, Star, MapPin, Phone, Mail, Instagram, Award, Users,
 import { ArticlesSection } from "@/components/articles-section";
 import { ReviewsCarousel } from "@/components/reviews-carousel";
 import { TelegramIcon } from "@/components/telegram-icon";
-import { ViberIcon } from "@/components/viber-icon";
 import { AnimatedCategoryCard } from "@/components/animated-category-card";
 import { AnimatedContactCard } from "@/components/animated-contact-card";
 import { GallerySection } from "@/components/gallery-section";
@@ -285,7 +284,7 @@ export default async function Home() {
 
               <AnimatedContactCard
                 index={1}
-                icon={<ViberIcon className="w-10 h-10 text-white" />}
+                icon={<Phone className="w-10 h-10 text-white" />}
                 title="Viber"
                 iconBgColor="bg-[#665CAC]"
                 content={
