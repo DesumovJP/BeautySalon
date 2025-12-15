@@ -8,6 +8,7 @@ interface AnimatedContactCardProps {
   title: string;
   content: ReactNode;
   index: number;
+  iconBgColor?: string;
 }
 
 export function AnimatedContactCard({
@@ -15,12 +16,13 @@ export function AnimatedContactCard({
   title,
   content,
   index,
+  iconBgColor = "bg-black",
 }: AnimatedContactCardProps) {
   return (
     <Card className="border border-beige-200 hover:border-black/30 hover:shadow-xl transition-all duration-300 bg-white group card-hover-lift h-full">
         <CardContent className="p-4 md:p-8">
           <div className="flex flex-col md:flex-row items-center md:items-start gap-3 md:gap-6 text-center md:text-left">
-            <div className="w-12 h-12 md:w-16 md:h-16 bg-black rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 [&>svg]:w-5 [&>svg]:h-5 md:[&>svg]:w-8 md:[&>svg]:h-8 [&>svg]:text-white">
+            <div className={`w-14 h-14 md:w-20 md:h-20 ${iconBgColor} rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-lg group-hover:shadow-xl [&>svg]:w-7 [&>svg]:h-7 md:[&>svg]:w-10 md:[&>svg]:h-10 [&>svg]:text-white`}>
               {icon}
             </div>
             <div className="flex-1 min-w-0">

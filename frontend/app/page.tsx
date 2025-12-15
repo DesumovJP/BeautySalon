@@ -6,6 +6,7 @@ import { Scissors, Sparkles, Star, MapPin, Phone, Mail, Instagram, Award, Users,
 import { ArticlesSection } from "@/components/articles-section";
 import { ReviewsCarousel } from "@/components/reviews-carousel";
 import { TelegramIcon } from "@/components/telegram-icon";
+import { ViberIcon } from "@/components/viber-icon";
 import { AnimatedCategoryCard } from "@/components/animated-category-card";
 import { AnimatedContactCard } from "@/components/animated-contact-card";
 import { GallerySection } from "@/components/gallery-section";
@@ -36,7 +37,7 @@ export default async function Home() {
   return (
     <div className="min-h-screen bg-beige-50">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-4 py-20 md:py-32 -mt-16 md:-mt-20 pt-28 md:pt-36">
+      <section className="relative min-h-screen md:min-h-[105vh] flex items-center justify-center px-4 py-20 md:py-32 -mt-16 md:-mt-20 pt-28 md:pt-36">
         {/* Background Image */}
         <div 
           className="absolute inset-0 hero-background"
@@ -269,8 +270,9 @@ export default async function Home() {
               {/* Contact Cards */}
               <AnimatedContactCard
                 index={0}
-                icon={<Phone className="w-8 h-8 text-white" />}
+                icon={<Phone className="w-10 h-10 text-white" />}
                 title="Телефон"
+                iconBgColor="bg-black"
                 content={
                   <>
                     <a href="tel:+380663888010" className="text-xs md:text-lg text-black/70 hover:text-black transition-colors font-medium block mb-1 md:mb-2">
@@ -283,8 +285,9 @@ export default async function Home() {
 
               <AnimatedContactCard
                 index={1}
-                icon={<Phone className="w-8 h-8 text-white" />}
+                icon={<ViberIcon className="w-10 h-10 text-white" />}
                 title="Viber"
+                iconBgColor="bg-[#665CAC]"
                 content={
                   <>
                     <a
@@ -302,8 +305,9 @@ export default async function Home() {
 
               <AnimatedContactCard
                 index={2}
-                icon={<TelegramIcon className="w-8 h-8 text-white" />}
+                icon={<TelegramIcon className="w-10 h-10 text-white" />}
                 title="Telegram"
+                iconBgColor="bg-[#0088cc]"
                 content={
                   <>
                     <a
@@ -321,14 +325,15 @@ export default async function Home() {
 
               <AnimatedContactCard
                 index={3}
-                icon={<Instagram className="w-8 h-8 text-white" />}
+                icon={<Instagram className="w-10 h-10 text-white" />}
                 title="Instagram"
+                iconBgColor="bg-gradient-to-br from-[#f09433] via-[#e6683c] to-[#dc2743]"
                 content={
                   <>
                     <a
                       href="https://instagram.com/salon_beauty"
-            target="_blank"
-            rel="noopener noreferrer"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-xs md:text-lg text-black/70 hover:text-black transition-colors font-medium block mb-1 md:mb-2"
                     >
                       @salon_beauty
