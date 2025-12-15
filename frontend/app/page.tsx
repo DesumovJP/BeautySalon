@@ -69,12 +69,12 @@ export default async function Home() {
         {/* Content */}
         <div className="relative z-10 max-w-6xl mx-auto px-4 text-center">
           {/* Elegant Badge */}
-          <div className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-white/5 backdrop-blur-md border border-white/10 mb-12 md:mb-16 hero-badge-animate badge-pulse">
-            <div className="w-1.5 h-1.5 rounded-full bg-white/60"></div>
-            <span className="text-xs md:text-sm text-white/90 font-light tracking-wider uppercase letter-spacing-wider">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 backdrop-blur-md border border-white/10 mb-12 md:mb-16 hero-badge-animate badge-pulse">
+            <div className="w-1 h-1 rounded-full bg-white/60"></div>
+            <span className="text-[10px] md:text-xs text-white/90 font-light tracking-wider uppercase letter-spacing-wider">
               Преміальний салон краси
             </span>
-            <div className="w-1.5 h-1.5 rounded-full bg-white/60"></div>
+            <div className="w-1 h-1 rounded-full bg-white/60"></div>
           </div>
 
           {/* Main Title */}
