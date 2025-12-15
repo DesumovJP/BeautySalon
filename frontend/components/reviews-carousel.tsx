@@ -164,7 +164,7 @@ export function ReviewsCarousel({ reviews }: ReviewsCarouselProps) {
                   </div>
 
                   {/* Review Text */}
-                  <p className="text-body-large text-black/80 leading-relaxed mb-8 flex-grow font-light">
+                  <p className="text-body-large text-black/80 leading-relaxed mb-8 flex-grow font-light text-center italic">
                     {review.text}
                   </p>
 
